@@ -335,7 +335,10 @@ a:after {
 #greywrap .icon {
 	font-size: 60px;
 	line-height: 30px;
-	margin-bottom: 10px;
+	margin-bottom: 400px;
+    margin-top: 20px;
+    background-repeat: no-repeat;
+    background-image: image_tag('well.jpg');
 }
 
 #footerwrap {
