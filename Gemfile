@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'figaro'
 gem 'brakeman'
+gem "cancan"
 
 group :development, :test do
   gem "rspec-rails"
