@@ -338,7 +338,7 @@ a:after {
 	margin-bottom: 400px;
     margin-top: 20px;
     background-repeat: no-repeat;
-    background-image: image_tag('well.jpg');
+    background-image:  url('well.jpg');
 }
 
 #footerwrap {
