@@ -8,7 +8,6 @@
  * URL: http://blacktie.co/
  */
 
-
 /* ==========================================================================
    Base Styles and Bootstrap Modifications
    ========================================================================== */
@@ -293,7 +292,7 @@ a:after {
 
 #headerwrap h1 {
 	color:#ffffff;
-	margin-top: 90px;
+	margin-top: 300px;
 	padding-bottom: 30px;
 	letter-spacing: 8px;
 	font-size: 100px;
@@ -308,7 +307,7 @@ a:after {
 	text-align: center;
 	line-height: 40px;
 	letter-spacing: 3px;
-	margin-left: 15px;
+	margin-left: 40px;
 	text-shadow: 1px 1px 1px #000;
 }
 
@@ -318,6 +317,7 @@ a:after {
 	padding-top: 40px;
 	border-bottom: 1px solid #ddd;
 	text-align: center;
+    height: 100%;
 }
 
 #greywrap .callout {
