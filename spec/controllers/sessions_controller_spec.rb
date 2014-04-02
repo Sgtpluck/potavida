@@ -22,5 +22,18 @@ describe SessionsController do
       expect(session[:user_id]).to_not be_nil
     end
   end
+
+  describe 'Sign out' do
+    let!(:user) { create(:user) }
+
+
+    it 'should destroy a session' do
+      session[:user_id] = user.id
+      get :destroy
+
+      expect(session[:user_id]).to be_nil
+    end
+  end
+
   
 end

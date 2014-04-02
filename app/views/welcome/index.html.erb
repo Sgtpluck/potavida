@@ -38,8 +38,14 @@
             <li> <a href="#portfolio" class="smoothScroll"> FAQ </a></li>
             <li> <a href="#blog" class="smoothScroll"> Blog</a></li>
             <li> <a href="#contact" class="smoothScroll"> Contact</a></li>
+            <li> <% if current_user %>
+                    <%= link_to 'Sign Out', sign_out_path %>
+                  <% else %>
+                    <%= link_to 'Sign In', sign_in_path, class: 'sign_in' %></li>
+                  <% end %>
           </ul>
-          <%= link_to 'Log In', sign_in_path %>
+          
+
         </div><!--/.nav-collapse -->
       </div>
     </div>
