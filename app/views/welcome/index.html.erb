@@ -24,8 +24,7 @@
   <body data-spy="scroll" data-offset="0" data-target="#navbar-main">
   
   
- <header>
-   <div id="navbar-main">
+    <div id="navbar-main">
       <!-- Fixed navbar -->
     <div class="navbar navbar-fixed-top">
       <div class="container">
@@ -41,11 +40,15 @@
             <li> <a href="#contact" class="smoothScroll"> Contact</a></li>
             <li> <% if current_user %>
                     <%= link_to 'Sign Out', sign_out_path %>
+                    <li><%= link_to 'Profile', profile_path(current_user) %></li>
                   <% else %>
-                    <%= link_to 'Sign In', sign_in_path, class: 'sign_in' %></li>
+                    <%= link_to 'Sign In', sign_in_path, id: 'sign_in', remote: true %> <br>
+                    <div id='hidden_form'>
+                    <%= render '/sessions/form' %> 
+                    </div>
                   <% end %>
+                </li>
           </ul>
- </header>
           
 
         </div><!--/.nav-collapse -->
@@ -56,16 +59,16 @@
     <!-- ==== HEADERWRAP ==== -->
 
     <!-- ==== GREYWRAP ==== -->
-    <!-- <div id="greywrap" id='home' name='home'> -->
-      <!-- <div class="row"> -->
-        <!-- <div class="col-lg-4 callout"> -->
-            <!-- <br><br> -->
-            <!-- <h1>PotaVida</h1> -->
-              <!-- <p>Solar Water Purifier: A Disruptive Solution to Lower Costs</p> -->
-        <!-- </div>col-lg-4  -->
-      <!-- </div><!-- row --> -->
-    <!-- </div>greywrap -->
-  <!-- </div>navbar main -->
+    <div id="greywrap" id='home' name='home'>
+      <div class="row">
+        <div class="col-lg-4 callout">
+            <br><br>
+            <h1>PotaVida</h1>
+              <p>Solar Water Purifier: A Disruptive Solution to Lower Costs</p>
+        </div><!-- col-lg-4 --> 
+      </div><!-- row -->
+    </div><!-- greywrap -->
+  </div><!-- navbar main -->
     
     <!-- ==== ABOUT ==== -->
     <div class="container" id="about" name="about">
