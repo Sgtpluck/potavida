@@ -9,7 +9,7 @@ describe PostsController do
 
     describe "create" do
       context "with valid attributes" do
-      let(:valid_attributes) { {title: "WATERWATER", author: "John Doe", content: "And not a drop to drink"} }
+      let(:valid_attributes) { {title: "WATERWATER", user_id: 2, content: "And not a drop to drink"} }
 
         it "successfully redirects after created" do
           post :create, post: valid_attributes
@@ -34,7 +34,7 @@ describe PostsController do
       end
 
       context "without valid attributes" do
-        let(:invalid_attributes) { {title: "", author: "john doe", content: "yadada"} }
+        let(:invalid_attributes) { {title: "", user_id: 2, content: "yadada"} }
 
         it "does not create a post" do
           post_count = Post.count
@@ -46,10 +46,10 @@ describe PostsController do
   end
       
   context "when a signed-in user is NOT admin" do
-    let(:valid_attributes) { {title: "Water", author: "john doe", content: "Water is the best"}}
+    let(:valid_attributes) { {title: "Water", user_id: 4, content: "Water is the best"}}
 
     before do 
-      @current_user = create(:user)
+      @current_user = create(:user_field)
       session[:user_id] = @current_user.id
     end
 
