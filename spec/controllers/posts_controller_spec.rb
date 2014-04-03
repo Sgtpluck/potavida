@@ -46,27 +46,30 @@ describe PostsController do
   end
       
   context "when a signed-in user is NOT admin" do
-    let(:valid_attributes) { {title: "Water", user_id: 4, content: "Water is the best"}}
-
     before do 
       @current_user = create(:user_field)
       session[:user_id] = @current_user.id
     end
 
-    it "does not create a post" do
-      post_count = Post.count
-      post :create, post: valid_attributes
-      expect(Post.count).to eq(post_count)
-    end
+    
+  context "it does not allow post creation" do
+    let(:valid_attributes) { {title: "Water", user_id: 4, content: "Water is the best"}}
+    
+      it "does not create a post" do
+        post_count = Post.count
+        post :create, post: valid_attributes
+        expect(Post.count).to eq(post_count)
+      end
 
-    it "redirects if not admin" do
-      get :new
-      expect(response.status).to be 302
-    end
+      it "redirects if not admin" do
+        get :new
+        expect(response.status).to be 302
+      end
 
-    it "flashes a notice" do
-      get :new
-      expect(flash[:notice]).to eq("You have to be an admin to do that.")
+      it "flashes a notice" do
+        get :new
+        expect(flash[:notice]).to eq("You have to be an admin to do that.")
+      end
     end
   end
 end
