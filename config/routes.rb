@@ -4,6 +4,7 @@ Potaomg::Application.routes.draw do
   get '/signin',    to: 'sessions#new', as: :sign_in
   post '/signin',   to: 'sessions#sign_in'
   get '/signout',   to: 'sessions#destroy', as: :sign_out
+  get '/profile/:id', to: 'users#profile', as: :profile
 
   get '/posts/new', to: 'posts#new'
   post '/posts/new', to: 'posts#create'
