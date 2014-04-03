@@ -21,7 +21,12 @@
 
   <body data-spy="scroll" data-offset="0" data-target="#navbar-main">
   
+<<<<<<< HEAD
    <div id="navbar-main">
+=======
+  
+    <div id="navbar-main">
+>>>>>>> 4b4a26381cc754f46811370eca3039cc399577b3
       <!-- Fixed navbar -->
     <div class="navbar navbar-fixed-top">
       <div class="container">
@@ -35,7 +40,15 @@
             <li> <a href="#portfolio" class="smoothScroll"> FAQ </a></li>
             <li> <a href="#blog" class="smoothScroll"> Blog</a></li>
             <li> <a href="#contact" class="smoothScroll"> Contact</a></li>
-            <li> 
+            <li> <% if current_user %>
+                    <%= link_to 'Sign Out', sign_out_path %>
+                    <li><%= link_to 'Profile', profile_path(current_user) %></li>
+                  <% else %>
+                    <%= link_to 'Sign In', sign_in_path, id: 'sign_in', remote: true %> <br>
+                    <div id='hidden_form'>
+                    <%= render '/sessions/form' %> 
+                    </div>
+                  <% end %>
             </li>
           </ul>
           
