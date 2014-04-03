@@ -3,5 +3,6 @@ class User < ActiveRecord::Base
   validates :name, :email, :password_digest, presence: true
   validates :name, :email, uniqueness: { case_sensitive: false }
   validates :email, format: { with: /.+@(\w+\.)+\w+/, message: 'Must enter a valid email address.' }
+  has_many  :posts
 
 end

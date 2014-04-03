@@ -14,7 +14,6 @@ gem 'capybara'
 gem 'bcrypt-ruby'
 gem 'figaro'
 gem 'brakeman'
-gem "cancan"
 
 group :development, :test do
   gem "rspec-rails"
