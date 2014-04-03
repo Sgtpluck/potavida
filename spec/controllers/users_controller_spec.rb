@@ -13,7 +13,8 @@ describe UsersController do
 
   describe 'get "new"' do
     it 'should allow only an admin to access' do
-      current_user.role = "client"
+      user.role = 'client'
+      session[:user_id] = user.id
       get :new
 
       expect(response).to be_redirect
