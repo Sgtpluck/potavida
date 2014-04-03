@@ -12,5 +12,6 @@ describe "the signin process" do
       click_button 'Sign in'
     end
     expect(page).to have_content 'Sign Out'
+    expect(page).to have_content 'Profile'
   end
 end
