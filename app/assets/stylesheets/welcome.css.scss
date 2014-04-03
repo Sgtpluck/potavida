@@ -10,9 +10,10 @@
   width: 100%;
 }
 
-.sign_in {
-  margin-left: 95%;
-
 .side-photo {
-  opacity: .3
+  opacity: .3;
+}
+
+#hidden_form {
+ visibility: hidden;
 }
