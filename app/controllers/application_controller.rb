@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
   def check_admin
     unless @current_user.role == "admin"
       redirect_to root_path
+      flash[:notice] = "You have to be an admin to do that."
     end
   end
   helper_method :check_admin
