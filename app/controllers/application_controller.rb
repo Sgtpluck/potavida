@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def check_admin
-    unless @current_user.role == "admin"
+    unless @current_user.try(:role) == "admin" 
       redirect_to root_path
       flash[:notice] = "You have to be an admin to do that."
     end
