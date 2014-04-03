@@ -1,11 +1,12 @@
 $(document).ready(function(){
     var style = document.querySelector('#hidden_form').style;
-    var link_style = document.querySelector('#sign_in').style;
+    if (document.querySelector('#sign_in')) {
+        var link_style = document.querySelector('#sign_in').style;
+    }
     $('#sign_in').click(function (e) {
         style.visibility = 'visible';
         link_style.visibility = 'hidden';
-
-    // var url = $('form.edit_user').attr('action');
+      
 
     // $.ajax({
     //     type: 'PATCH',
