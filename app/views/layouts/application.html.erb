@@ -14,7 +14,7 @@
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li><%= image_tag 'pvlogo.png', class: 'logo', width: 200 %></li>
-              <li><%= link_to 'Home', root_path %>
+              <li><%= link_to 'Home', root_path %></li>
 <!--               <#% if current_user.role == 'admin' %> 
               <li><#%= link_to 'Create New User', user_create_path %></li>
               <#% end %>
@@ -25,13 +25,15 @@
               <li><%= link_to 'Profile', profile_path(current_user) %></li>
             </ul>
             
-          </div><!--/.nav-collapse -->
+          </div>
         </div>
       </div>
     </div>
+  <div class='all_the_containers'>
 
 <%= yield %>
-
+  
+  </div>
 
 </body>
 </html>

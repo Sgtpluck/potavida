@@ -10,6 +10,7 @@ Potaomg::Application.routes.draw do
   post '/posts/new',            to: 'posts#create'
 
   get '/users/new',             to: 'users#new', as: :new_user
+  post '/users/new',            to: 'users#create', as: :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

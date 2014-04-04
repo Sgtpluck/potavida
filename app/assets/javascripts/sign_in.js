@@ -1,5 +1,7 @@
 $(document).ready(function(){
-    var style = document.querySelector('#hidden_form').style;
+    if (document.querySelector('#hidden_form')) {
+        var style = document.querySelector('#hidden_form').style;
+    }
     if (document.querySelector('#sign_in')) {
         var link_style = document.querySelector('#sign_in').style;
     }
