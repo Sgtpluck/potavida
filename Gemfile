@@ -24,6 +24,14 @@ group :development, :test do
 end
 
 group :development do
+  gem 'capistrano'
+  gem 'capistrano-rvm'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
 end
+
+gem 'therubyracer', platforms: :ruby
+
+
