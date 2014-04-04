@@ -10,6 +10,7 @@ gem 'jquery-ui-rails'
 gem 'jbuilder', '~> 1.2'
 
 gem 'capybara'
+gem 'poltergeist'
 
 gem 'bcrypt-ruby'
 gem 'figaro'

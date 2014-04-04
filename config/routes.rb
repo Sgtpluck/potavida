@@ -1,16 +1,19 @@
 Potaomg::Application.routes.draw do
 
   root 'welcome#index'
-
-  get '/signin',    to: 'sessions#new', as: :sign_in
-  post '/signin',   to: 'sessions#sign_in'
-  get '/signout',   to: 'sessions#destroy', as: :sign_out
-  get '/profile/:id', to: 'users#profile', as: :profile
-
+  
   get '/posts/new',   to: 'posts#new'
   post '/posts/new',  to: 'posts#create'
   get '/posts/:id',   to: 'posts#show'
   get '/posts',       to: 'posts#index'
+
+  get '/signin',                to: 'sessions#new', as: :sign_in
+  post '/signin',               to: 'sessions#sign_in'
+  get '/signout',               to: 'sessions#destroy', as: :sign_out
+  get '/profile/:id',           to: 'users#profile', as: :profile
+
+  get '/users/new',             to: 'users#new', as: :new_user
+  post '/users/new',            to: 'users#create', as: :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

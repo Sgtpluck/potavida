@@ -2,13 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#navbar-main {
-  height: 100%;
-}
-
-.navbar-nav > li > a {
-  width: 100%;
-}
 
 .sign_in {
   margin-left: 95%;
@@ -20,4 +13,13 @@
 
 #hidden_form {
  visibility: hidden;
+}
+
+.all_the_containers {
+  margin-top: 15%;
+  margin-left: 20%
+}
+
+.form_field {
+  padding: 3px;
 }
