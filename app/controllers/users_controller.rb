@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
+  before_action :check_admin, only: [:new, :create]
 
   def profile
     @user = current_user
   end
 
   def new
-    check_admin
     @user = User.new
   end
 
