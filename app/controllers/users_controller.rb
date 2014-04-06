@@ -18,6 +18,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    unless current_user.id == params[:id]
+      redirect_to user_show_path(current_user.id)
+    end
+  end
+
   private
 
   def user_params
