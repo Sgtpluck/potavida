@@ -51,7 +51,17 @@ describe PostsController do
       session[:user_id] = @current_user.id
     end
 
-    
+    it "shows the individual post" do
+      post = create(:post)
+      get :show, id: post.id
+      expect(assigns(:post)).to eq post
+    end
+
+    it "successfully shows all the posts" do
+      get :index
+      expect(response).to be_successful
+    end
+
   context "it does not allow post creation" do
     let(:valid_attributes) { {title: "Water", user_id: 4, content: "Water is the best"}}
     

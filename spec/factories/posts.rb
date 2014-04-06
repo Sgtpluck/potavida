@@ -3,7 +3,7 @@
 FactoryGirl.define do
   factory :post do
     title "MyString"
-    author "MyString"
+    user_id 2
     content "MyText"
   end
 end
