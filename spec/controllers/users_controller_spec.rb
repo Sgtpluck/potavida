@@ -57,19 +57,20 @@ describe UsersController do
 
   describe "patch 'update'" do
 
-    it 'does update params' do
+    it 'does update' do
       patch :update, id: user.id, user: {
-                                       password: 'hello',
-                                       password_confirmation: 'hello' }
+                                       name: 'user' 
+                                     }
+      user.reload
 
-      expect(response).to be_redirect
+      expect(user.name).to eq 'user'
     end
 
     it "should render the edit view if the user isn't saved" do
       patch :update, id: user.id, user: {
-                                          password: 'hello',
-                                          password_confirmation: 'hi'
-      }
+                                       name: nil 
+                                     }
+      user.reload
 
       expect(response).to render_template(:edit)
     end

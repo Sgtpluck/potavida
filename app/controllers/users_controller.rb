@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :check_admin, only: [:new, :create]
-  before_action :find_user, only: [:edit]
+  before_action :find_user, only: [:edit, :update]
 
   def show
     @user = current_user
@@ -24,8 +24,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.update(user_params)
-    if @user.save
+    if @user.update(user_params)
       redirect_to user_path(current_user.id)
     else
       render :edit
@@ -39,6 +38,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :role)
   end
 end
