@@ -22,11 +22,16 @@
   
     <div id="navbar-main">
       <!-- Fixed navbar -->
-      <div class="navbar navbar-fixed-top">
-        <div class="container">
-          <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li><%= image_tag 'pvlogo.png', class: 'logo', width: 200 %></li>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <%= image_tag 'pvlogo.png', class: 'logo', width: 75 %>
+            </button>
+        </div>
+      <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+              <li class="hidden-xs hidden-sm"><%= image_tag 'pvlogo.png', class: 'logo', width: 200 %></li>
               <li> <a href="#home" class="smoothScroll">Home</a> </li>
               <li> <a href="#about" class="smoothScroll"> Mission </a> </li>
               <li> <a href="#services" class="smoothScroll"> Product </a> </li>
@@ -47,6 +52,8 @@
           </div><!--/.nav-collapse -->
         </div>
       </div>
+    </div>
+  </div>
 
 
     <!-- ==== GREYWRAP ==== -->
