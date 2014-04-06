@@ -1,4 +1,4 @@
 Welcome, <%= @user.name %>
 <%= @user.email %>
 
-<%= button_to 'Edit your information', user_edit_path %>
+<%= link_to 'Edit your information', edit_user_path, class: 'button' %>

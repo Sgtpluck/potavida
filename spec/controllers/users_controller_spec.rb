@@ -19,9 +19,8 @@ describe UsersController do
 
       expect(response).to be_redirect
     end
-  end
 
-  it 'should create a new user' do
+    it 'should create a new user' do
       session[:user_id] = user.id
       get :new
       post 'create', { user:    { name: 'Blake',
@@ -43,9 +42,20 @@ describe UsersController do
                                 role: 'client' } }
                 }.to change(User, :count).by(1)
     end
+  end
 
 
-    describe 'Updating users' do
+  describe "get 'edit'" do
+    it "should redirect if the user is trying to navigate to someone else's profile page" do
+      user2 = create(:user_field)
+      session[:user_id] = user.id
+      get :edit, id: user2.id
+
+      expect(response).to be_redirect
+    end
+  end
+
+  describe "patch 'update'" do
 
     it 'does update params' do
       patch :update, id: user.id, user: {
