@@ -11,31 +11,32 @@ $(document).ready(function(){
     $('#sign_in').click(function (e) {
         style.visibility = 'visible';
         link_style.visibility = 'hidden';
-        var url = document.querySelector('form.sign_in_form').action
-        $('.submit_sign_in').click(function (e) {
-            $.ajax({
-                type: 'GET',
-                url: url,
-                data: {
-                    'user[name]': $('#user_name').val(),
-                    'user[password]': $('#user_password').val()
-                },
-                success: function (data) {
-                    style.visibility = 'hidden';
-                },
-                error: function(xhr, textStatus, errorThrown) {
-                    alert("There was a problem signing in.");
-                }
-            });
-            e.preventDefault();
-        });
+        // var url = document.querySelector('form.sign_in_form').action
+        // $('.submit_sign_in').click(function (e) {
+        //     $.ajax({
+        //         type: 'POST',
+        //         url: url,
+        //         data: {
+        //             'user[name]': $('#user_name').val(),
+        //             'user[password]': $('#user_password').val()
+        //         },
+        //         success: function (data) {
+        //             style.visibility = 'hidden';
+        //         },
+        //         error: function(xhr, textStatus, errorThrown) {
+        //             alert("There was a problem signing in.");
+        //             console.log(data)
+        //         }
+        //     });
+        //     e.preventDefault();
+        // });
     e.preventDefault();
   });
 
     $('.close').click(function (e) {
         style.visibility = 'hidden';
-        link_style.visibility = 'visible'
-    })
+        link_style.visibility = 'visible';
+    });
 
 
 });

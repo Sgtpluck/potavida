@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   before_action :check_admin, only: [:new, :create]
+  before_action :check_admin, only: [:new, :create]
 
-  def profile
+  def show
     @user = current_user
   end
 
@@ -12,7 +13,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to profile_path(current_user.id)
+      redirect_to user_show_path(current_user.id)
     else
       render :new
     end

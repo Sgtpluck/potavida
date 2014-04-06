@@ -3523,6 +3523,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border: 1px solid #ddd;
   border-bottom-color: transparent;
 }
+
 .nav-tabs.nav-justified {
   width: 100%;
   border-bottom: 0;
@@ -4063,7 +4064,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-inverse .navbar-toggle:hover,
 .navbar-inverse .navbar-toggle:focus {
-  background-color: #333;
+  /*background-color: #333;*/
 }
 .navbar-inverse .navbar-toggle .icon-bar {
   background-color: #fff;

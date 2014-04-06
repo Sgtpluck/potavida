@@ -41,7 +41,7 @@
               <li> <a href="#contact" class="smoothScroll"> Contact</a> </li>
               <% if current_user %>
                 <li><%= link_to 'Sign Out', sign_out_path %></li>
-                <li><%= link_to 'Profile', profile_path(current_user) %></li>
+                <li><%= link_to 'Profile', user_show_path(current_user) %></li>
               <% else %>
                 <li><%= link_to 'Sign In', sign_in_path, id: 'sign_in', remote: true %>
                 </li>
@@ -73,6 +73,7 @@
       <div class="row white">
         <div class="gimme_some_space">
         </div>
+      <br>
       <br>
         <h1 class="centered">A little about PotaVida</h1>
         <hr>
@@ -138,6 +139,8 @@
         <div class="gimme_some_space">
         </div>
       <div class="row white centered">
+        <br>
+      <br>
         <h1 class="centered">Meet the team.</h1>
         <hr>
         <div class="col-lg-4">
