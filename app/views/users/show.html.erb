@@ -1,4 +1,6 @@
 Welcome, <%= @user.name %>
+<br>
 <%= @user.email %>
 
-<%= link_to 'Edit your information', edit_user_path, class: 'button' %>
+<br>
+<%= link_to 'Edit your information', edit_user_path(@user.id), class: 'button' %>

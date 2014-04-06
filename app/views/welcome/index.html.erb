@@ -41,7 +41,7 @@
               <li> <a href="#contact" class="smoothScroll"> Contact</a> </li>
               <% if current_user %>
                 <li><%= link_to 'Sign Out', sign_out_path %></li>
-                <li><%= link_to 'Profile', user_show_path(current_user) %></li>
+                <li><%= link_to 'Profile', user_path(current_user) %></li>
               <% else %>
                 <li><%= link_to 'Sign In', sign_in_path, id: 'sign_in', remote: true %>
                 </li>
