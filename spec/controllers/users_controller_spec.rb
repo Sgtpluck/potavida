@@ -32,7 +32,7 @@ describe UsersController do
       expect(response).to be_redirect
     end
 
-    it 'should increase the Monster count by 1' do
+    it 'should increase the User count by 1' do
       session[:user_id] = user.id
       get :new
       
@@ -43,4 +43,25 @@ describe UsersController do
                                 role: 'client' } }
                 }.to change(User, :count).by(1)
     end
+
+
+    describe 'Updating users' do
+
+    it 'does update params' do
+      patch :update, id: user.id, user: {
+                                       password: 'hello',
+                                       password_confirmation: 'hello' }
+
+      expect(response).to be_redirect
+    end
+
+    it "should render the edit view if the user isn't saved" do
+      patch :update, id: user.id, user: {
+                                          password: 'hello',
+                                          password_confirmation: 'hi'
+      }
+
+      expect(response).to render_template(:edit)
+    end
+  end # ends 'updating users'
 end

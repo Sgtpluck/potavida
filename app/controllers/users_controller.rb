@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   before_action :check_admin, only: [:new, :create]
-  before_action :check_admin, only: [:new, :create]
 
   def show
     @user = current_user
