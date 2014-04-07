@@ -11,15 +11,9 @@
 
           <div class="blog-post">
             <h2 class="blog-post-title"><%= @post.title %></h2>
-            <p class="blog-post-meta"><%= @post.date %><a href="#"> <%= @post.user.name %></a></p>
+            <p class="blog-post-meta"><%= @post.date.strftime('%b %d, %Y') %> by <%= @post.user.name %></p>
 
             <p><%= @post.content %></p>
             <hr>
           </div><!-- /.blog-post -->
-
-          <ul class="pager">
-            <li><a href="#">Previous</a></li>
-            <li><a href="#">Next</a></li>
-          </ul>
-
         </div><!-- /.blog-main -->

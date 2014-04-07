@@ -12,20 +12,18 @@
         <div class="col-sm-8 blog-main">
 
           <div class="blog-post">
-            <% Post.all.order(:date).reverse.each do |post| %>
-            <h2 class="blog-post-title"><%= post.title %></h2>
-            <p class="blog-post-meta"><%= post.date %><a href="#"> <%= post.user.name %></a></p>
+            <% @posts.order(:date).reverse.each do |post| %>
+            <h2 class="blog-post-title"><%= link_to("#{post.title}", "/posts/#{post.id}") %></h2>
+            <p class="blog-post-meta"><%= post.date.strftime('%b %d, %Y') %> by <%= post.user.name %></p>
 
             <p><%= post.content %></p>
             <hr>
             <% end %>
           </div><!-- /.blog-post -->
 
-          <ul class="pager">
-            <li><a href="#">Previous</a></li>
-            <li><a href="#">Next</a></li>
-          </ul>
-
+            <div class="pager">
+              <%= paginate @posts %>
+            </div>
         </div><!-- /.blog-main -->
 
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
