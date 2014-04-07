@@ -4,6 +4,10 @@ describe UsersController do
   let!(:user) { create(:user) }
 
   describe 'get "index" ' do
+    before do 
+      session[:user_id] = user.id
+    end
+
     it 'should be successful for a logged-in admin' do
       get :index, id: user.id
 
@@ -11,7 +15,7 @@ describe UsersController do
     end
 
     it 'should redirect anyone who is not an admin' do
-      user.update(role: 'manager')
+      user.update(role: 'client')
       get :index, id: user.id
 
       expect(response).to be_redirect
@@ -98,4 +102,23 @@ describe UsersController do
       expect(response).to render_template(:edit)
     end
   end # ends 'updating users'
+
+  describe 'get "change_user_path"' do
+    before do
+      session[:user_id] = user.id
+    end
+    it 'should be successful if the user is an admin' do
+      get :change_user_role
+
+      expect(response).to be_successful
+    end
+
+    it 'should be redirect if the user is not an admin' do
+      user.update(role: 'manager')
+      get :change_user_role
+
+      expect(response).to be_redirect
+    end
+
+  end
 end

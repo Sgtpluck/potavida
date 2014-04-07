@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
-  before_action :check_admin, only: [:new, :create]
+  before_action :check_admin, only: [:new, :create, :index]
   before_action :find_user, only: [:edit, :update]
+
+  def index
+    @users = User.all
+  end
 
   def show
     @user = current_user
