@@ -7,13 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id="navbar-main">
+ <div id="navbar-main">
       <!-- Fixed navbar -->
-      <div class="navbar navbar-fixed-top">
-        <div class="container">
-          <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li><%= image_tag 'pvlogo.png', class: 'logo', width: 200 %></li>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <%= image_tag 'pvlogo.png', class: 'logo', width: 75 %>
+            </button>
+        </div>
+      <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+              <li class="hidden-xs"><%= image_tag 'pvlogo.png', class: 'logo', width: 150 %></li> 
               <li><%= link_to 'Home', root_path %></li>
 <!--               <#% if current_user.role == 'admin' %> 
               <li><#%= link_to 'Create New User', user_create_path %></li>
@@ -22,7 +27,7 @@
                 <li><#%= link_to 'Data Visualizations', data_path %></li>
               <#% end %> -->
               <li><%= link_to 'Sign Out', sign_out_path %></li>
-              <li><%= link_to 'Profile', profile_path(current_user) %></li>
+              <li><%= link_to 'Profile', user_path(current_user) %></li>
             </ul>
             
           </div>

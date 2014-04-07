@@ -16,6 +16,7 @@ class ApplicationController < ActionController::Base
       redirect_to root_path
       flash[:notice] = "You have to be an admin to do that."
     end
+    return true
   end
   helper_method :check_admin
 

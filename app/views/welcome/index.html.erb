@@ -22,11 +22,16 @@
   
     <div id="navbar-main">
       <!-- Fixed navbar -->
-      <div class="navbar navbar-fixed-top">
-        <div class="container">
-          <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-              <li><%= image_tag 'pvlogo.png', class: 'logo', width: 200 %></li>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <%= image_tag 'pvlogo.png', class: 'logo', width: 75 %>
+            </button>
+        </div>
+      <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+              <li class="hidden-xs"><%= image_tag 'pvlogo.png', class: 'logo', width: 150 %></li>
               <li> <a href="#home" class="smoothScroll">Home</a> </li>
               <li> <a href="#about" class="smoothScroll"> Mission </a> </li>
               <li> <a href="#services" class="smoothScroll"> Product </a> </li>
@@ -36,7 +41,7 @@
               <li> <a href="#contact" class="smoothScroll"> Contact</a> </li>
               <% if current_user %>
                 <li><%= link_to 'Sign Out', sign_out_path %></li>
-                <li><%= link_to 'Profile', profile_path(current_user) %></li>
+                <li><%= link_to 'Profile', user_path(current_user) %></li>
               <% else %>
                 <li><%= link_to 'Sign In', sign_in_path, id: 'sign_in', remote: true %>
                 </li>
@@ -47,6 +52,8 @@
           </div><!--/.nav-collapse -->
         </div>
       </div>
+    </div>
+  </div>
 
 
     <!-- ==== GREYWRAP ==== -->
@@ -64,6 +71,9 @@
     <!-- ==== ABOUT ==== -->
     <div class="container" id="about" name="about">
       <div class="row white">
+        <div class="gimme_some_space">
+        </div>
+      <br>
       <br>
         <h1 class="centered">A little about PotaVida</h1>
         <hr>
@@ -80,6 +90,8 @@
         </div><!-- col-lg-6 -->
       </div><!-- row -->
     </div><!-- container -->
+    <div class="gimme_some_space">
+        </div>
     
     <!-- ==== SECTION DIVIDER1 -->
 
@@ -90,6 +102,8 @@
       <br>
       <br>
       <div class="row">
+        <div class="gimme_some_space">
+        </div>
         <h2 class="centered">PotaVida's Solution is Different:</h2>
         <hr>
         <br>
@@ -120,8 +134,13 @@
 
     <!-- ==== TEAM MEMBERS ==== -->
     <div class="container" id="team" name="team">
-    <br>
+      <div class="gimme_some_space">
+        </div>
+        <div class="gimme_some_space">
+        </div>
       <div class="row white centered">
+        <br>
+      <br>
         <h1 class="centered">Meet the team.</h1>
         <hr>
         <div class="col-lg-4">
@@ -148,10 +167,63 @@
       </div><!-- row -->
     </div><!-- container -->
 
+    <div class="container" id="FAQ" name="FAQ">
+        <div class="row">
+          <div class="gimme_some_space">
+          </div>
+          <div class="row">
+          <div class="gimme_some_space">
+          </div>
+          <h2 class="centered">FAQ</h2>
+          <hr>
+          <br>
+          <div class="col-lg-offset-2 col-lg-8">
+            <p>Q: What plastic bottles can be used? Don't dangerous chemicals leach from plastics, especially when left in the sun?</p>
+
+            <p>A: Thin-walled polyethylene terephthalate, labeled PET or PETE in the US, can be safely used for SODIS. These are marked with the "1" recycling symbol, shown below. Glass bottles can be used, but only if the glass is known to be free of UV-blocking additives, so is not usually recommended.</p>
+            <br>
+            <p>Valid concerns about hazardous chemicals leaching from PET bottles left in the sun have been addressed by scientific studies. Leached organic compounds amount to less than 10% of the safe amount for drinking water as defined by the WHO, and no other chemicals are leached.    <%= link_to 'More information', "http://www.sodis.ch/news_documents/deha_dehp_indien.pdf" %></p>
+
+            <p>Q: How large a problem is contaminated drinking water?</p>
+
+            <p>A: “The sheer scale of dirty water means more people now die from contaminated and polluted water than from all forms of violence including wars,” the United Nations Environment Programme (UNEP) said. This includes 2.2 million people whose deaths are attributed to diarrhea, mostly from dirty water, and 1.8 million children aged under five who succumb to water-borne diseases. This equates to one infant every 20 seconds. <em>Christian Science Monitor (3/22/2010)</em></p>
+
+            <p>Preventable deaths from diarrheal diseases account for 1.4 million or 18% of all deaths in children under five per year. <em>WHO (2010)</em></p>
+
+            <p>Q: How effective is SODIS at solving this problem?</p>
+
+            <p>A: With proper use of SODIS, the “risk of diarrhea was reduced by 40%”. <em>Rose, A., et al. (2006). Solar disinfection of water for diarrhoeal prevention in southern India. Archives of Disease in Children, 91, 139-141.</em></p>
+
+            <p>Q: How much does SODIS cost compared to other water treatments?</p>
+
+            <p>A: 
+            <%= image_tag('sodiscost.png') %>Annual cost comparison of different interventions to improve water quality. <em>Reproduced from Casen et. al. 2007</em></p>
+            
+            <p>Q: How does solar disinfection (SODIS) work?</p>
+
+            <p>A: Three effects of solar radiation kill or deactivate dysentery-causing organisms:</p>
+              <ol>
+                <li>Ultraviolet light interferes directly with the metabolism and destroys cell structures of bacteria.</li>
+                <li>Ultraviolet light reacts with oxygen dissolved in the water and produces highly reactive forms of oxygen (oxygen free radicals and hydrogen peroxides), that are believed to also damage pathogens.</li>
+                <li>Cumulative solar energy (including the infrared radiation component) heats the water. If the water temperatures rises above 50°C, the disinfection process is three times faster.
+                </li>
+              </ol>
+
+            <p>Q: How will the PotaVida indicator work?</p>
+
+            <p>A: ﻿﻿Our indicator measures the exposure of the water to solar irradiation. It will differentiate between darkness, partial sun, and full sun, and indicate progress according to the SODIS guidelines for sufficient expose.</p>
+
+            <p>The SODIS indicator could be configured to wait for exactly the required exposure, but instead implements the guidelines so that it will serve as a training tool. This way, people can learn and have confidence in SODIS without having to use an indicator every time.</p>
+          </div><!-- col-lg -->
+        </div><!-- row -->
+
     
     <!-- ==== BLOG ==== -->
     <div class="container" id="blog" name="blog">
-    <br>
+      <div class="gimme_some_space">
+        </div>
+        <div class="gimme_some_space">
+        </div>
       <div class="row">
         <br>
         <h1 class="centered">Check in regularly for updates</h1>

@@ -5,4 +5,8 @@ class User < ActiveRecord::Base
   validates :email, format: { with: /.+@(\w+\.)+\w+/, message: 'Must enter a valid email address.' }
   has_many  :posts
 
+  def update_roles(role_params)
+    update(role: role_params[:role])
+  end
+
 end

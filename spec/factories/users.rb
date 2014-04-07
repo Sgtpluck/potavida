@@ -22,7 +22,7 @@ FactoryGirl.define do
     email "Blake@blake.com"
     password "apassword"
     password_confirmation "apassword"
-    role "worker"
+    role "manager"
   end
 
   factory :user_client, class: User do
