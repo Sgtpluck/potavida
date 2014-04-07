@@ -19,6 +19,7 @@ Potaomg::Application.routes.draw do
   patch '/profile/:id',         to: 'users#update'
 
   get '/user/role/:id',         to: 'users#change_user_role', as: :change_user_role
+  patch '/user/role/:id',       to: 'users#update_user_role'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :check_admin, only: [:new, :create, :index, :change_user_role]
-  before_action :find_user, only: [:edit, :update, :show]
+  before_action :check_admin, except: [:show, :edit, :update]
+  before_action :find_user, only: [:edit, :update, :show, :update_user_role]
 
   def index
     @users = User.all
@@ -35,6 +35,11 @@ class UsersController < ApplicationController
   end
 
   def change_user_role
+  end
+
+  def update_user_role
+    @user.update_roles(params)
+    redirect_to users_path
   end
 
   private

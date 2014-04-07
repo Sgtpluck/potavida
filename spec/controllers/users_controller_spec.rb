@@ -121,6 +121,16 @@ describe UsersController do
 
       expect(response).to be_redirect
     end
+  end
 
+  describe 'patch user role' do
+    it 'should update the user role' do
+      user2 = create(:user_field)
+      session[:user_id] = user.id
+      patch :update_user_role, id: user2.id, role: 'admin'
+      user2.reload
+
+      expect(user2.role).to eq 'admin'
+    end
   end
 end

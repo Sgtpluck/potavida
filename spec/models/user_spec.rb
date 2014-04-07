@@ -42,6 +42,14 @@ describe User do
 
       expect(user).to be_invalid
     end
+  end
 
+  describe 'update roles' do
+    it 'should update the user role' do
+      user2 = create(:user_field)
+      user2.update_roles({role: 'admin'})
+
+      expect(user2.role).to eq 'admin'
+    end
   end
 end
