@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Subscribers do
+describe Subscriber do
   describe 'validations' do
     let(:subscriber) { create(:subscriber) }
 
