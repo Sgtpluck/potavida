@@ -2075,8 +2075,7 @@ fieldset[disabled] .btn-default.active {
 }
 .btn-primary {
   color: #fff;
-  background-color: #428bca;
-  border-color: #357ebd;
+  background-color: #79BEDB;
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -4026,7 +4025,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #333;
 }
 .navbar-inverse {
-  background-color: #1D53BF;
+  background-color: #79BEDB;
 }
 .navbar-inverse .navbar-brand {
   color: #999;
