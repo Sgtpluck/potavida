@@ -17,6 +17,11 @@ gem 'bcrypt-ruby'
 gem 'figaro'
 gem 'brakeman'
 
+# WYSIWYG
+ gem 'wmd-rails'
+ gem "redcarpet", "~> 3.0.0"
+
+
 group :development, :test do
   gem "rspec-rails"
   gem "guard-rspec"

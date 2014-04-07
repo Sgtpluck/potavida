@@ -12,5 +12,7 @@
  *= bootstrap
  *= main
  *= welcome
+ *= require 'wmd/wmd'
  *= require_tree .
  */
+
