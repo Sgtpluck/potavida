@@ -1,1 +1,25 @@
-<%= @post.content %>
+    <div class="container">
+
+      <div class="blog-header">
+        <h1 class="blog-title">Potavida Blog</h1>
+        <p class="lead blog-description">The Latest News on our Evolving Product</p>
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-8 blog-main">
+
+          <div class="blog-post">
+            <h2 class="blog-post-title"><%= @post.title %></h2>
+            <p class="blog-post-meta"><%= @post.date %><a href="#"> <%= @post.user.name %></a></p>
+
+            <p><%= @post.content %></p>
+            <hr>
+          </div><!-- /.blog-post -->
+
+          <ul class="pager">
+            <li><a href="#">Previous</a></li>
+            <li><a href="#">Next</a></li>
+          </ul>
+
+        </div><!-- /.blog-main -->
