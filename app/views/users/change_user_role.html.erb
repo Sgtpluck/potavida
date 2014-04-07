@@ -1,0 +1,10 @@
+<%= @user.name %> currently holds the role of <%= @user.role %>. If you'd like to change that, please submit the form below.
+<br>
+<%= form_for @user do |f| %>
+  <div class="form_field">
+    <%= f.label :role %>
+    <%= f.select(:role, options_for_select(['Admin','Client','Field Manager'])) %>
+  </div>
+    <%= f.hidden_field :id, value: @user.id %>
+  <div class="actions"><%= f.submit %></div>
+<% end %>

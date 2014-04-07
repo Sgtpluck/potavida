@@ -103,19 +103,21 @@ describe UsersController do
     end
   end # ends 'updating users'
 
-  describe 'get "change_user_path"' do
+  describe 'get "change_user_role"' do
+    let!(:user2) { create(:user_field) }
+
     before do
       session[:user_id] = user.id
     end
     it 'should be successful if the user is an admin' do
-      get :change_user_role
+      get :change_user_role, id: user2.id
 
       expect(response).to be_successful
     end
 
     it 'should be redirect if the user is not an admin' do
       user.update(role: 'manager')
-      get :change_user_role
+      get :change_user_role, id: user2.id
 
       expect(response).to be_redirect
     end

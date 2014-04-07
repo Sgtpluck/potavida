@@ -1,13 +1,12 @@
 class UsersController < ApplicationController
-  before_action :check_admin, only: [:new, :create, :index]
-  before_action :find_user, only: [:edit, :update]
+  before_action :check_admin, only: [:new, :create, :index, :change_user_role]
+  before_action :find_user, only: [:edit, :update, :show]
 
   def index
     @users = User.all
   end
 
   def show
-    @user = current_user
   end
 
   def new
@@ -33,6 +32,9 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def change_user_role
   end
 
   private
