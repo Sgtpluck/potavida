@@ -7,6 +7,7 @@ FactoryGirl.define do
     password "MyString"
     password_confirmation "MyString"
     role "admin"
+    id 4
   end
 
   factory :user1, class: User do

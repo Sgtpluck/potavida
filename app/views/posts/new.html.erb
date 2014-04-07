@@ -8,7 +8,7 @@
     </div>
 </div>
   <%= form_for @post do |f| %>
-    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.hidden_field :user_id, :value => @current_user.id %>
     <div class='small-10 columns'>
       <%= f.label :title %>
       <%= f.text_field :title %>

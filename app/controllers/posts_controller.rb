@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      @post.user_id = params[:user_id]
+      @post.user_id = params[:post][:user_id]
       redirect_to '/blog'
     else
     render :new
@@ -20,7 +20,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all.page(params[:page])
+    @posts = Post.all.order('date DESC').page(params[:page])
   end
 
   private

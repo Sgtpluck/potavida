@@ -9,11 +9,12 @@ describe PostsController do
 
     describe "create" do
       context "with valid attributes" do
-      let(:valid_attributes) { {title: "WATERWATER", user_id: 2, content: "And not a drop to drink"} }
+      let(:valid_attributes) { {title: "WATERWATER", user_id: 4, content: "And not a drop to drink", date: '04-09-2014'} }
 
-        it "successfully redirects after created" do
-          post :create, post: valid_attributes
-          expect(response.status).to eq 302
+        it "gets the new page" do
+          get :new
+
+          expect(response).to be_successful
         end
 
         it "creates a post" do
@@ -22,6 +23,10 @@ describe PostsController do
           expect(Post.count).to eq(post_count + 1)
         end
 
+        it "successfully redirects after created" do
+          post :create, post: valid_attributes
+          expect(response.status).to eq 302
+        end
         # it "sends an email" do
         #   post :create, post: valid_attributes
         #   expect(maybe the name of the job?).to maybe send?
@@ -34,7 +39,7 @@ describe PostsController do
       end
 
       context "without valid attributes" do
-        let(:invalid_attributes) { {title: "", user_id: 2, content: "yadada"} }
+        let(:invalid_attributes) { {title: "", user_id: 2, content: "yadada", date: '04-09-2014'} }
 
         it "does not create a post" do
           post_count = Post.count
@@ -51,6 +56,12 @@ describe PostsController do
       session[:user_id] = @current_user.id
     end
 
+    it "does NOT show the new page" do
+      get :new
+
+      expect(response).to be_redirect
+    end
+
     it "shows the individual post" do
       post = create(:post)
       get :show, id: post.id
@@ -63,7 +74,7 @@ describe PostsController do
     end
 
   context "it does not allow post creation" do
-    let(:valid_attributes) { {title: "Water", user_id: 4, content: "Water is the best"}}
+    let(:valid_attributes) { {title: "Water", user_id: 4, content: "Water is the best", date: '04-09-2014'}}
     
       it "does not create a post" do
         post_count = Post.count
