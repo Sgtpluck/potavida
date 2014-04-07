@@ -7,8 +7,8 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.user_id = @current_user.id
     if @post.save
+      @post.user_id = params[:user_id]
       redirect_to '/blog'
     else
     render :new
@@ -26,6 +26,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :user_id, :content)
+    params.require(:post).permit(:title, :user_id, :content, :date)
   end
 end

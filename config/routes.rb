@@ -3,9 +3,9 @@ Potaomg::Application.routes.draw do
   root 'welcome#index'
   
   get '/posts/new',   to: 'posts#new'
-  post '/posts/new',  to: 'posts#create'
+  post'/posts/new',   to: 'posts#create', as: :posts
   get '/posts/:id',   to: 'posts#show'
-  get '/posts',       to: 'posts#index'
+  get '/blog',        to: 'posts#index'      
 
   get '/signin',                to: 'sessions#new', as: :sign_in
   post '/signin',               to: 'sessions#sign_in'
