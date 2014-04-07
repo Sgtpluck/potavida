@@ -5,6 +5,12 @@
 
 .sign_in {
   margin-left: 95%;
+  margin-top: 2%;
+}
+
+#sign_in_here {
+  text-align: right;
+  margin-left: -75px;
 }
 
 .side-photo {
@@ -16,10 +22,14 @@
 }
 
 .all_the_containers {
-  margin-top: 15%;
+  margin-top: 10%;
   margin-left: 20%
 }
 
 .form_field {
   padding: 3px;
+}
+
+.gimme_some_space {
+  margin-top: 50px;
 }

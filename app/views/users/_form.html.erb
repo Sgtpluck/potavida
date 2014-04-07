@@ -1,6 +1,5 @@
-Make a new user! 
   <% @user.errors.full_messages.each do |msg| %>
-    <%= msg %>
+    <%= msg %><br>
   <% end %>
 
 <%= form_for @user do |f| %>
@@ -13,10 +12,6 @@ Make a new user!
     <%= f.text_field :name %>
   </div>
   <div class="form_field">
-    <%= f.label :role %>
-    <%= f.select(:role, options_for_select(['Admin','Client','Field Manager'])) %>
-  </div>
-  <div class="form_field">
     <%= f.label :password %>
     <%= f.password_field :password %>
   </div>
@@ -24,5 +19,6 @@ Make a new user!
     <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation %>
   </div>
+  <%= f.hidden_field :id, value: @user.id %>
   <div class="actions"><%= f.submit %></div>
 <% end %>
