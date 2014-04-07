@@ -2,8 +2,31 @@ require 'spec_helper'
 
 describe UsersController do
   let!(:user) { create(:user) }
+
+  describe 'get "index" ' do
+    it 'should be successful for a logged-in admin' do
+      get :index, id: user.id
+
+      expect(response).to be_successful
+    end
+
+    it 'should redirect anyone who is not an admin' do
+      user.update(role: 'manager')
+      get :index, id: user.id
+
+      expect(response).to be_redirect
+    end
+
+    it 'should have an array of users' do
+      user1 = create(:user_field)
+      user2 = create(:user_client)
+      get :index, id: user.id
+
+      expect(assigns(:users)).to match_array([user, user1, user2])
+    end
+  end
   
-  describe 'show page' do
+  describe 'get "show"' do
     it 'should be successful for a logged-in user' do
       get :show, id: user.id
 
