@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   before_action :check_admin, only: [:new, :create]
+  before_action :find_post, only: [:destroy, :update, :show]
+  layout 'posts'
 
   def new
     @post = Post.new
@@ -16,7 +18,6 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
   end
 
   def index
@@ -24,7 +25,6 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:id])
     if @post.update(post_params)
       redirect_to post_path(@post.id)
     else
@@ -33,7 +33,6 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
     @post.destroy
     redirect_to posts_path
   end
@@ -42,5 +41,9 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :user_id, :content, :date)
+  end
+
+  def find_post
+    @post = Post.find(params[:id])
   end
 end
