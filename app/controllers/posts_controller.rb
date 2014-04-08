@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :check_admin, only: [:new, :create]
-  before_action :find_post, only: [:destroy, :update, :show]
+  before_action :check_admin, only: [:new, :create, :edit]
+  before_action :find_post, only: [:destroy, :update, :show, :edit]
   layout 'posts'
 
   def new
@@ -20,13 +20,16 @@ class PostsController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
   def index
     @posts = Post.all.order('date DESC').page(params[:page])
   end
 
   def update
     if @post.update(post_params)
-      redirect_to post_path(@post.id)
+      redirect_to post_path(@post)
     else
       render :edit
     end
@@ -44,6 +47,7 @@ class PostsController < ApplicationController
   end
 
   def find_post
-    @post = Post.find(params[:id])
+    post_id = params[:id] || params[:post][:id]
+    @post = Post.find(post_id)
   end
 end
