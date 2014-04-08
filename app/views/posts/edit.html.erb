@@ -1,0 +1,32 @@
+<% @post.errors.full_messages.each do |error| %>
+  <%= error %><br>
+<% end %>
+<div class="container">
+<div class='row'>
+  <div class='small-12 columns'>
+     <h3> Edit Blog Post:</h3>
+    </div>
+</div>
+  <%= form_for @post do |f| %>
+    <%= f.hidden_field :user_id %>
+    <%= f.hidden_field :id %>
+    <div class='small-10 columns'>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+    <div class='small-10 columns'>
+      <%= f.label :date %>
+      <%= f.date_field :date %>
+    </div>
+    <div id="editor-button-bar"></div>
+      <%=f.label :content %><br>
+      <%=f.text_area :content, size: '80x10', id: 'editor-input' %>
+    </div> 
+  <div id="editor-preview"></div>
+    <div class='row'>
+      <div class='small-4 columns'>
+        <%= f.submit class: 'button' %>
+      </div>
+    </div>
+</div>
+  <% end %>

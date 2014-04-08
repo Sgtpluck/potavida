@@ -48,6 +48,27 @@ describe PostsController do
         end
       end
     end
+
+    describe 'updates a post' do
+      let(:post){ create(:post) }
+
+      it "does update" do 
+        patch :update, id: post.id, post: {title: 'New Title'}
+        post.reload
+        expect(post.title).to eq 'New Title'
+      end
+    end
+
+    describe "deletes a post" do
+      let!(:post){ create(:post) }
+
+      it "deletes the post" do
+        post_count = Post.count
+        delete :destroy, id: post.id 
+
+        expect(Post.count).to eq(post_count - 1)
+      end
+    end
   end
       
   context "when a signed-in user is NOT admin" do

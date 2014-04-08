@@ -23,6 +23,21 @@ class PostsController < ApplicationController
     @posts = Post.all.order('date DESC').page(params[:page])
   end
 
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      redirect_to post_path(@post.id)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to posts_path
+  end
+
   private
 
   def post_params
