@@ -5,5 +5,5 @@ require File.expand_path('../config/application', __FILE__)
 
 Potaomg::Application.load_tasks
 
-require "resque/tasks"
+require 'resque/tasks'
 task "resque:setup" => :environment

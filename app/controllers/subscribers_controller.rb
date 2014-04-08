@@ -3,7 +3,7 @@ class SubscribersController < ApplicationController
   def create
     @subscriber = Subscriber.new(subscriber_params)
     if @subscriber.save
-      # send a welcome email
+      Resque.enqueue(WelcomeJob, @subscriber.id)
     end
     redirect_to root_path
   end

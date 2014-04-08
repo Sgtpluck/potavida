@@ -1,5 +1,7 @@
+require 'resque/server'
 Potaomg::Application.routes.draw do
-
+  mount Resque::Server, :at => "/resque"
+  
   root 'welcome#index'
   
   get '/posts/new',   to: 'posts#new'
