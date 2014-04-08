@@ -16,10 +16,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    respond_to do |format|
-        format.js
-        format.html { redirect_to root_path }
-      end
+    redirect_to root_path
   end
 
 end

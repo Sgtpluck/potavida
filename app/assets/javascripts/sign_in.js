@@ -1,16 +1,16 @@
 $(document).ready(function(){
     if ($('#hidden_form')) {
-        var style = $('#hidden_form');
+        var form = $('#hidden_form');
     }
     if ($('#sign_in')) {
-        var link_style = $('#sign_in');
+        var sign_in_link = $('#sign_in');
     }
     if ($('.close')) {
         var close_button = document.querySelector('.close');
     }
     $('#sign_in').click(function (e) {
-        style.show();
-        link_style.hide();
+        form.show();
+        sign_in_link.hide();
         var url = document.querySelector('form.sign_in_form').action
         $('.submit_sign_in').click(function (e) {
             $.ajax({
@@ -22,8 +22,7 @@ $(document).ready(function(){
                     'authenticity_token': $(".sign_in_token").html().replace(/(\r\n|\n|\r|\s)/gm,"")
                 },
                 success: function (data) {
-                    style.hide();
-                    $(".fill_in").append("<li>Test</li>");
+                    form.hide();
                 },
                 error: function(xhr, textStatus, errorThrown) {
                     alert("There was a problem signing in.");
