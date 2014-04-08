@@ -32,13 +32,13 @@
       <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
               <li class="hidden-xs"><%= image_tag 'pvlogo.png', class: 'logo', width: 150 %></li>
-              <li> <a href="#home" class="smoothScroll">Home</a> </li>
-              <li> <a href="#about" class="smoothScroll"> Mission </a> </li>
-              <li> <a href="#services" class="smoothScroll"> Product </a> </li>
-              <li> <a href="#team" class="smoothScroll"> Team </a> </li>
-              <li> <a href="#FAQ" class="smoothScroll"> FAQ </a> </li>
-              <li> <a href="#blog" class="smoothScroll"> Blog</a> </li>
-              <li> <a href="#contact" class="smoothScroll"> Contact</a> </li>
+              <li> <a href="#home" class="smoothScroll nav-link">Home</a> </li>
+              <li> <a href="#about" class="smoothScroll nav-link"> Mission </a> </li>
+              <li> <a href="#services" class="smoothScroll nav-link"> Product </a> </li>
+              <li> <a href="#team" class="smoothScroll nav-link"> Team </a> </li>
+              <li> <a href="#FAQ" class="smoothScroll nav-link"> FAQ </a> </li>
+              <li> <a href="#blog" class="smoothScroll nav-link"> Blog</a> </li>
+              <li> <a href="#contact" class="smoothScroll nav-link"> Contact</a> </li>
               <% if current_user %>
                 <li><%= link_to 'Sign Out', sign_out_path %></li>
                 <li><%= link_to 'Profile', user_path(current_user) %></li>
