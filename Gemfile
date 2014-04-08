@@ -21,6 +21,7 @@ gem 'brakeman'
  gem 'wmd-rails'
  gem "redcarpet", "~> 3.0.0"
 
+gem "resque"
 
 group :development, :test do
   gem "rspec-rails"

@@ -1,5 +1,7 @@
+require 'resque/server'
 Potaomg::Application.routes.draw do
-
+  mount Resque::Server, :at => "/resque"
+  
   root 'welcome#index'
   
   # get '/posts/new',       to: 'posts#new'
@@ -25,6 +27,8 @@ Potaomg::Application.routes.draw do
 
   get '/user/role/:id',         to: 'users#change_user_role', as: :change_user_role
   patch '/user/role/:id',       to: 'users#update_user_role'
+
+  post '/subscribe',            to: 'subscribers#create', as: :subscribers
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -3,5 +3,6 @@ class WelcomeController < ApplicationController
   
   def index
     @posts = Post.all
+    @subscriber = Subscriber.new
   end
 end
