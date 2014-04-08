@@ -1,34 +1,48 @@
-
+  <script>
+    $(function(){
+    new WMDEditor({
+      input: "editor-input",
+      button_bar: "editor-button-bar",
+      preview: "editor-preview",
+      helpLink: "http://daringfireball.net/projects/markdown/syntax"
+    });
+  })
+  </script>
 
 <% @post.errors.full_messages.each do |error| %>
   <%= error %><br>
 <% end %>
 <div class="container">
-<div class='row'>
-  <div class='small-12 columns'>
-     <h3> New Blog Post:</h3>
+
+  <div class='row'>
+    <div class='small-12 columns'>
+       <h3> New Blog Post:</h3>
     </div>
-</div>
+  </div>
+
   <%= form_for @post do |f| %>
     <%= f.hidden_field :user_id, :value => @current_user.id %>
-    <div class='small-10 columns'>
-      <%= f.label :title %>
-      <%= f.text_field :title %>
+    <div class="row">
+      <div class="col-md-4 blog-field">
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+      </div>
+
+      <div class="col-md-4 blog-field">
+        <%= f.label :date %>
+        <%= f.date_field :date %>
+      </div>
+
+      <div class='col-md-1 align-right'>
+        <%= f.submit class: "btn btn-lg btn-success" %>
+      </div>
     </div>
-    <div class='small-10 columns'>
-      <%= f.label :date %>
-      <%= f.date_field :date %>
-    </div>
+
     <div id="editor-button-bar"></div>
       <%=f.label :content %><br>
       <%=f.text_area :content, size: '80x10', id: 'editor-input', class:'wmd-input'%>
-    </div> 
+
   <div id="editor-preview"></div>
-    <div class='row'>
-      <div class='small-4 columns'>
-        <%= f.submit class: 'button' %>
-      </div>
-    </div>
 </div>
   <% end %>
 

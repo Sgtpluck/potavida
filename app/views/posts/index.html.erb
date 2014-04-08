@@ -13,7 +13,7 @@
 
           <div class="blog-post">
             <% @posts.each do |post| %>
-            <h2 class="blog-post-title"><%= link_to("#{post.title}", "/posts/#{post.id}") %></h2>
+            <h3 class="blog-post-title"><%= link_to("#{post.title}", "/posts/#{post.id}") %></h3>
             <p class="blog-post-meta"><%= post.date.strftime('%b %d, %Y') %> by <%= post.user.name %></p>
 
             <p><%= post.content %></p>
@@ -29,7 +29,7 @@
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
             <% if current_user.try(:role) == "admin" %>
-            <%= link_to 'Create a New Blog', new_post_path, class: "btn btn-large btn-success" %>
+            <%= link_to 'Create a New Post', new_post_path, class: "btn btn-large btn-success" %>
             <br><br>
             <% end %>
 
