@@ -1,24 +1,26 @@
 $(document).ready(function(){
-    if (document.querySelector('#hidden_form')) {
-        var style = document.querySelector('#hidden_form').style;
+    if ($('#hidden_form')) {
+        var style = $('#hidden_form');
     }
-    if (document.querySelector('#sign_in')) {
-        var link_style = document.querySelector('#sign_in').style;
+    if ($('#sign_in')) {
+        var link_style = $('#sign_in');
     }
-    if (document.querySelector('.close')) {
+    if ($('.close')) {
         var close_button = document.querySelector('.close');
     }
     $('#sign_in').click(function (e) {
-        style.visibility = 'visible';
-        link_style.visibility = 'hidden';
+        style.show();
+        link_style.hide();
         // var url = document.querySelector('form.sign_in_form').action
         // $('.submit_sign_in').click(function (e) {
         //     $.ajax({
         //         type: 'POST',
         //         url: url,
         //         data: {
+        //    // serialize?
         //             'user[name]': $('#user_name').val(),
         //             'user[password]': $('#user_password').val()
+        //             'authenticity_token':
         //         },
         //         success: function (data) {
         //             style.visibility = 'hidden';
@@ -34,8 +36,8 @@ $(document).ready(function(){
   });
 
     $('.close').click(function (e) {
-        style.visibility = 'hidden';
-        link_style.visibility = 'visible';
+        style.hide();
+        link_style.show();
     });
 
 

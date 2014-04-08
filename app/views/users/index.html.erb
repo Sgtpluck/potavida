@@ -1,10 +1,19 @@
-HERE ARE ALL THE USERS
-<ol>
-<% @users.each do |user| %>
-  <li><%= user.name %>, <%= user.email %>, <%= user.role %>
-    <%= link_to 'Change User Role', change_user_role_path(user), class: "btn btn-large btn-primary" %> 
-   <!--  <#%= link_to 'Destroy User', destroy_user_path, class: "btn btn-large btn-primary" %>
-     -->
-  </li>
+<h2>Users</h2>
+<br><br>
+
+<table class='user_table'>
+  <tr>
+    <th>User Name</th>
+    <th>User Email</th>
+    <th>User Role</th>
+    <th></th>
+  </tr>
+  <% @users.each do |user| %>
+  <tr>
+    <td><%= user.name %></td>
+    <td><%= user.email %></td>
+    <td><%= user.role %> </td>
+    <td><%= link_to 'Change User Role', change_user_role_path(user), class: "btn btn-large btn-primary" %></td>
+  </tr>
   <% end %>
-</ol>
+</table>

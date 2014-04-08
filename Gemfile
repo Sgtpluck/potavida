@@ -16,6 +16,9 @@ gem 'bcrypt-ruby'
 gem 'figaro'
 gem 'brakeman'
 
+# for background jobs
+gem "resque"
+
 group :development, :test do
   gem "rspec-rails"
   gem "guard-rspec"
