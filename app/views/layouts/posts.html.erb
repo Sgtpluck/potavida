@@ -21,14 +21,7 @@
       <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
               <li class="hidden-xs"><%= image_tag 'pvlogo.png', class: 'logo', width: 150 %></li>
-              <li> <a href="#home" class="smoothScroll">Home</a> </li>
-              <% if current_user %>
-                <li><%= link_to 'Sign Out', sign_out_path %></li>
-                <li><%= link_to 'Profile', user_path(current_user) %></li>
-              <% else %>
-                <li><%= link_to 'Sign In', sign_in_path, id: 'sign_in', remote: true %>
-                </li>
-              <% end %>
+              <li> <a href="/">Home</a> </li>
               <li> <div id='hidden_form'> <%= render '/sessions/form' %> </div> </li>
             </ul>
             

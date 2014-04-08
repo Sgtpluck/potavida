@@ -28,6 +28,11 @@
 
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
+            <% if current_user.try(:role) == "admin" %>
+            <%= link_to 'Create a New Blog', new_post_path, class: "btn btn-large btn-success" %>
+            <br><br>
+            <% end %>
+
             <h4>About</h4>
             <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
           </div>
