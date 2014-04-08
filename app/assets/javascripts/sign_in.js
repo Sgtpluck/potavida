@@ -23,6 +23,7 @@ $(document).ready(function(){
                 },
                 success: function (data) {
                     style.hide();
+                    $(".fill_in").append("<li>Test</li>");
                 },
                 error: function(xhr, textStatus, errorThrown) {
                     alert("There was a problem signing in.");
