@@ -14,7 +14,7 @@
             <p class="blog-post-meta"><%= @post.date.strftime('%b %d, %Y') %> by <%= @post.user.name %></p>
 
             <p><%= markdown @post.content %></p>
-            <%= link_to "Edit", edit_post_path(@post), class: 'button' %>
+            <%= link_to "Edit", edit_post_path(@post), class: 'btn btn-warning' %>
             <hr>
           </div><!-- /.blog-post -->
         </div><!-- /.blog-main -->
