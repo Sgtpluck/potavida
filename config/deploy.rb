@@ -1,6 +1,10 @@
-# config valid only for Capistrano 3.1
-lock '3.1.0'
+require 'capistrano/rvm'
+require 'capistrano/bundler'
+require 'capistrano/rails/assets'
+require 'capistrano/rails/migrations'
 
+# config valid only for Capistrano 3.1
+# lock '3.1.0'
 
 set :application, 'potavida'
 set :repo_url, 'git@github.com:Sgtpluck/potavida.git'
