@@ -11,9 +11,16 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     if @post.save
       @post.user_id = params[:post][:user_id]
-      redirect_to '/blog'
+      blog_blast
+      redirect_to '/posts'
     else
     render :new
+    end
+  end
+
+  def blog_blast
+    Subscriber.all.each do |subscriber|
+      Resque.enqueue(PostJob, subscriber.id, @post.id,)
     end
   end
 
