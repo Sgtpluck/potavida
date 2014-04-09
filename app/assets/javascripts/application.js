@@ -13,5 +13,7 @@
 
 //= require jquery
 //= require jquery_ujs
+//= require wmd/wmd
+//= require wmd/showdown
 //= require_tree .
 

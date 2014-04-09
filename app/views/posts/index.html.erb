@@ -1,6 +1,6 @@
   <body>
 
-    <div class="container">
+    <div class="container post">
 
       <div class="blog-header">
         <h1 class="blog-title">Potavida Blog</h1>
@@ -13,7 +13,7 @@
 
           <div class="blog-post">
             <% @posts.each do |post| %>
-            <h2 class="blog-post-title"><%= link_to("#{post.title}", "/posts/#{post.id}") %></h2>
+            <h3 class="blog-post-title"><%= link_to("#{post.title}", "/posts/#{post.id}") %></h3>
             <p class="blog-post-meta"><%= post.date.strftime('%b %d, %Y') %> by <%= post.user.name %></p>
 
             <p><%= post.content %></p>
@@ -28,6 +28,11 @@
 
         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
+            <% if current_user.try(:role) == "admin" %>
+            <%= link_to 'Create a New Post', new_post_path, class: "btn btn-large btn-success" %>
+            <br><br>
+            <% end %>
+
             <h4>About</h4>
             <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
           </div>
