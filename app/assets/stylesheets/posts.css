@@ -27,3 +27,7 @@ input {
 input.btn.btn-lg.btn-success {
   margin-top: 10px;
 }
+
+div.container.post {
+  margin: 2% 0% 2% 10%;
+}

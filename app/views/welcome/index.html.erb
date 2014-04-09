@@ -30,8 +30,9 @@
             </button>
         </div>
       <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav" id='headers'>
               <li class="hidden-xs"><%= image_tag 'pvlogo.png', class: 'logo', width: 150 %></li>
+<<<<<<< HEAD
               <li> <a href="#home" class="smoothScroll nav-link">Home</a> </li>
               <li> <a href="#about" class="smoothScroll nav-link"> Mission </a> </li>
               <li> <a href="#services" class="smoothScroll nav-link"> Product </a> </li>
@@ -44,9 +45,23 @@
                 <li><%= link_to 'Profile', user_path(current_user) %></li>
               <% else %>
                 <li><%= link_to 'Sign In', sign_in_path, id: 'sign_in', remote: true %>
-                </li>
-              <% end %>
+=======
+              <li> <a href="#home" class="smoothScroll">Home</a> </li>
+              <li> <a href="#about" class="smoothScroll"> Mission </a> </li>
+              <li> <a href="#services" class="smoothScroll"> Product </a> </li>
+              <li> <a href="#team" class="smoothScroll"> Team </a> </li>
+              <li> <a href="#FAQ" class="smoothScroll"> FAQ </a> </li>
+              <li> <a href="#blog" class="smoothScroll"> Blog</a> </li>
+              <li> <a href="#contact" class="smoothScroll"> Contact</a> </li>
               <li> <div id='hidden_form'> <%= render '/sessions/form' %> </div> </li>
+              <% unless current_user %>
+              <li><%= link_to 'Sign In', sign_in_path, id: 'sign_in', remote: true %>
+>>>>>>> 62dac2018699570bdcc98745b9f6c93793aa2a83
+                </li>
+              <% else %>
+              <li id='current'><%= link_to 'Profile', user_path(current_user) %></li>
+                 <li id='current'><%= link_to 'Sign Out', sign_out_path %></li>
+              <% end %>
             </ul>
             
           </div><!--/.nav-collapse -->
@@ -282,8 +297,11 @@
               <div class="form_field">
                 <%= f.label :name %>
                 <%= f.text_field :name %>
-              </div>
-              <div class="actions"><%= f.submit %></div>
+                </div>
+                 <div class='subscriber_token'>
+                  <%= form_authenticity_token %>
+                </div>
+              <div class="actions"><%= f.submit class: 'subscriber_submit' %></div>
             <% end %>
           </p>
         </div><!-- col -->

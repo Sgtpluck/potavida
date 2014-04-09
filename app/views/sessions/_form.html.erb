@@ -8,6 +8,9 @@
     <%= label_tag :password %>
     <%= password_field_tag :password %><br>
   </div>
+  <div class='sign_in_token'>
+  <%= form_authenticity_token %>
+  </div>
   <div class='actions'>
     <%= submit_tag 'Sign in', class: 'submit_sign_in' %> <%= image_tag('close.png', class: 'close') %>
   </div>
