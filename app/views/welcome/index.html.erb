@@ -30,7 +30,7 @@
             </button>
         </div>
       <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav" id='headers'>
               <li class="hidden-xs"><%= image_tag 'pvlogo.png', class: 'logo', width: 150 %></li>
               <li> <a href="#home" class="smoothScroll">Home</a> </li>
               <li> <a href="#about" class="smoothScroll"> Mission </a> </li>
@@ -39,14 +39,14 @@
               <li> <a href="#FAQ" class="smoothScroll"> FAQ </a> </li>
               <li> <a href="#blog" class="smoothScroll"> Blog</a> </li>
               <li> <a href="#contact" class="smoothScroll"> Contact</a> </li>
-              <% if current_user %>
-                <li><%= link_to 'Sign Out', sign_out_path %></li>
-                <li><%= link_to 'Profile', user_path(current_user) %></li>
-              <% else %>
-                <li><%= link_to 'Sign In', sign_in_path, id: 'sign_in', remote: true %>
-                </li>
-              <% end %>
               <li> <div id='hidden_form'> <%= render '/sessions/form' %> </div> </li>
+              <% unless current_user %>
+              <li><%= link_to 'Sign In', sign_in_path, id: 'sign_in', remote: true %>
+                </li>
+              <% else %>
+              <li id='current'><%= link_to 'Profile', user_path(current_user) %></li>
+                 <li id='current'><%= link_to 'Sign Out', sign_out_path %></li>
+              <% end %>
             </ul>
             
           </div><!--/.nav-collapse -->
@@ -282,8 +282,11 @@
               <div class="form_field">
                 <%= f.label :name %>
                 <%= f.text_field :name %>
-              </div>
-              <div class="actions"><%= f.submit %></div>
+                </div>
+                 <div class='subscriber_token'>
+                  <%= form_authenticity_token %>
+                </div>
+              <div class="actions"><%= f.submit class: 'subscriber_submit' %></div>
             <% end %>
           </p>
         </div><!-- col -->

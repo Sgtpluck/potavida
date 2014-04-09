@@ -1,37 +1,36 @@
 $(document).ready(function(){
     if ($('#hidden_form')) {
-        var style = $('#hidden_form');
+        var form = $('#hidden_form');
     }
     if ($('#sign_in')) {
-        var link_style = $('#sign_in');
+        var sign_in_link = $('#sign_in');
     }
     if ($('.close')) {
         var close_button = document.querySelector('.close');
     }
     $('#sign_in').click(function (e) {
-        style.show();
-        link_style.hide();
-        // var url = document.querySelector('form.sign_in_form').action
-        // $('.submit_sign_in').click(function (e) {
-        //     $.ajax({
-        //         type: 'POST',
-        //         url: url,
-        //         data: {
-        //    // serialize?
-        //             'user[name]': $('#user_name').val(),
-        //             'user[password]': $('#user_password').val()
-        //             'authenticity_token':
-        //         },
-        //         success: function (data) {
-        //             style.visibility = 'hidden';
-        //         },
-        //         error: function(xhr, textStatus, errorThrown) {
-        //             alert("There was a problem signing in.");
-        //             console.log(data)
-        //         }
-        //     });
-        //     e.preventDefault();
-        // });
+        form.show();
+        sign_in_link.hide();
+        var url = document.querySelector('form.sign_in_form').action
+        $('.submit_sign_in').click(function (e) {
+            $.ajax({
+                type: 'POST',
+                url: url,
+                data: {
+                    'name': $('input#name').val(),
+                    'password': $('input#password').val(),
+                    'authenticity_token': $(".sign_in_token").html().replace(/(\r\n|\n|\r|\s)/gm,"")
+                },
+                success: function (data) {
+                    form.hide();
+                },
+                error: function(xhr, textStatus, errorThrown) {
+                    alert("There was a problem signing in.");
+                    console.log(data)
+                }
+            });
+            e.preventDefault();
+        });
     e.preventDefault();
   });
 
