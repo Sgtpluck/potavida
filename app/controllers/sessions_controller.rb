@@ -9,9 +9,9 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
     end
     respond_to do |format|
-        format.js
-        format.html { redirect_to root_path }
-      end
+      format.js
+      format.html { redirect_to root_path }
+    end
   end
 
   def destroy
