@@ -1,7 +1,22 @@
 class GraphsController < ApplicationController
   before_action :check_permissions, only: [:index]
+  layout 'user'
 
   def index
+  end
+
+  def histogram
+    respond_to do |format|
+      format.js
+      format.html { redirect_to graphs_path }
+    end
+  end
+
+  def bar
+    respond_to do |format|
+      format.js
+      format.html { redirect_to graphs_path }
+    end
   end
 
 private
