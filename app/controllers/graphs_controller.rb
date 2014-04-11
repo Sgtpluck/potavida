@@ -19,6 +19,9 @@ class GraphsController < ApplicationController
     end
   end
 
+  def map
+  end
+  
 private
 
   def check_permissions
