@@ -1,0 +1,1 @@
+$(document).ready(function(){$("#histo_link").click(function(t){var n=$("#histo_link").attr("href");$.ajax({type:"GET",url:n,success:function(){console.log("The button worked")},error:function(t,n,e){alert(e)}}),t.preventDefault()})});
