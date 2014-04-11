@@ -14,9 +14,10 @@ Potaomg::Application.routes.draw do
 
   resources :posts
 
-  get '/graphs',                     to: 'graphs#index'
-  get '/graphs/bar',                 to: 'graphs#bar'
-  get '/graphs/histogram',           to: 'graphs#histogram'
+  get '/graphs',                to: 'graphs#index'
+  get '/graphs/bar',            to: 'graphs#bar'
+  get '/graphs/histogram',      to: 'graphs#histogram'
+  get '/graphs/map',            to: 'graphs#map'
 
 
   get '/signin',                to: 'sessions#new', as: :sign_in
