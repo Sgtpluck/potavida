@@ -3,6 +3,22 @@ $(document).ready(function() {
 
   $('#map_link').click(function (e) {
     var url = $('#map_link').attr('href');
+    function water_pins(water_data) {
+      $.each(water_data["water_datum"], function( index, value ) {
+        markers = handler.addMarkers([
+        {
+          "lat": value["lat"],
+          "lng": value["long"],
+          "picture": {
+            // "url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
+            "width":  36,
+            "height": 36
+          },
+          "infowindow": value["serial"]
+          }
+        ]);
+      });
+    }
 
     $.ajax({
         type: 'GET',
@@ -10,26 +26,26 @@ $(document).ready(function() {
         dataType: 'json',
         success: function(data) {
           var water_data = data
-          $("#container4").append("<div id='map'></div>")
+          $("#container4").append("<div id='map'></div>");
           if ($('#map').length) {
             handler = Gmaps.build('Google');
             handler.buildMap({ provider: {}, internal: {id:'map'}}, function(){
-              $.each(water_data["water_datum"], function( index, value ) { 
-                  markers = handler.addMarkers([
-                  {
-                    "lat": value["lat"],
-                    "lng": value["long"],
-                    "picture": {
-                      // "url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
-                      "width":  36,
-                      "height": 36
-                    },
-                    "infowindow": value["serial"]
-                  }
-                ]);
-                handler.bounds.extendWith(markers);
-                handler.fitMapToBounds();
-              }); 
+              water_pins(data);
+                //function$.each(water_data["water_datum"], function( index, value ) { 
+                //   markers = handler.addMarkers([
+                //   {
+                //     "lat": value["lat"],
+                //     "lng": value["long"],
+                //     "picture": {
+                //       // "url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
+                //       "width":  36,
+                //       "height": 36
+                //     },
+                //     "infowindow": value["serial"]
+                //   }
+                // ]);
+              handler.bounds.extendWith(markers);
+              handler.fitMapToBounds();
             });
           }
         },
