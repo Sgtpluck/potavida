@@ -11,10 +11,9 @@
 // about supported directives.
 //
 
-//= require gmaps/google
 //= require jquery
 //= require jquery_ujs
 //= require wmd/wmd
 //= require wmd/showdown
+//= require gmaps/google
 //= require_tree .
-
