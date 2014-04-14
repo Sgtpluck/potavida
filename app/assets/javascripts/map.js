@@ -2,6 +2,7 @@ $(document).ready(function() {
   // var button = document.querySelector('#map_link')
 
   $('#map_link').click(function (e) {
+    $('#container4').empty();
     var url = $('#map_link').attr('href');
     function water_pins(water_data) {
       $.each(water_data["water_datum"], function( index, value ) {
@@ -31,19 +32,6 @@ $(document).ready(function() {
             handler = Gmaps.build('Google');
             handler.buildMap({ provider: {}, internal: {id:'map'}}, function(){
               water_pins(data);
-                //function$.each(water_data["water_datum"], function( index, value ) { 
-                //   markers = handler.addMarkers([
-                //   {
-                //     "lat": value["lat"],
-                //     "lng": value["long"],
-                //     "picture": {
-                //       // "url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
-                //       "width":  36,
-                //       "height": 36
-                //     },
-                //     "infowindow": value["serial"]
-                //   }
-                // ]);
               handler.bounds.extendWith(markers);
               handler.fitMapToBounds();
             });
