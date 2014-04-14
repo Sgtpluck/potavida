@@ -1,14 +1,35 @@
 $(document).ready(function() {
-  // var button = document.querySelector('#bar_link')
+  // var button = document.querySelector('#map_link')
 
   $('#map_link').click(function (e) {
     var url = $('#map_link').attr('href');
 
     $.ajax({
         type: 'GET',
-        url: url, format: 'js',
-        success: function() {
-          console.log("The button worked")
+        url: url,
+        dataType: 'json',
+        success: function(data) {
+          console.log(data);
+          $("#container4").append("<div id='map'></div>")
+          if ($('#map').length) {
+            handler = Gmaps.build('Google');
+            handler.buildMap({ provider: {}, internal: {id:'map'}}, function(){
+              markers = handler.addMarkers([
+                {
+                  "lat": 47,
+                  "lng": -122,
+                  "picture": {
+                    // "url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
+                    "width":  36,
+                    "height": 36
+                  },
+                  "infowindow": "hi"
+                }
+              ]);
+              handler.bounds.extendWith(markers);
+              handler.fitMapToBounds();
+            });  
+          }
         },
         error: function(xhr, textStatus, errorThrown) {
           alert(errorThrown);
@@ -17,25 +38,26 @@ $(document).ready(function() {
     e.preventDefault();
   });
 
-  if ($('#map').length) {
-    handler = Gmaps.build('Google');
-    handler.buildMap({ provider: {}, internal: {id:'map'}}, function(){
-      markers = handler.addMarkers([
-        {
-          "lat": 47,
-          "lng": -122,
-          "picture": {
-            // "url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
-            "width":  36,
-            "height": 36
-          },
-          "infowindow": "hi"
-        }
-      ]);
-      handler.bounds.extendWith(markers);
-      handler.fitMapToBounds();
-    });  
-  }
+
+  // if ($('#map').length) {
+  //   handler = Gmaps.build('Google');
+  //   handler.buildMap({ provider: {}, internal: {id:'map'}}, function(){
+  //     markers = handler.addMarkers([
+  //       {
+  //         "lat": 47,
+  //         "lng": -122,
+  //         "picture": {
+  //           // "url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
+  //           "width":  36,
+  //           "height": 36
+  //         },
+  //         "infowindow": "hi"
+  //       }
+  //     ]);
+  //     handler.bounds.extendWith(markers);
+  //     handler.fitMapToBounds();
+  //   });  
+  // }
 });
 
 
