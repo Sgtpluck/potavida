@@ -13,13 +13,17 @@ gem 'kaminari'
 gem 'capybara'
 gem 'poltergeist'
 
+gem 'httparty'
+
 gem 'bcrypt-ruby'
 gem 'figaro'
 gem 'brakeman'
 
+gem 'gmaps4rails'
+
 # WYSIWYG
- gem 'wmd-rails'
- gem "redcarpet", "~> 3.0.0"
+gem 'wmd-rails'
+gem "redcarpet", "~> 3.0.0"
 
 gem "resque"
 

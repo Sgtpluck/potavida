@@ -19,6 +19,14 @@ class GraphsController < ApplicationController
     end
   end
 
+  def map
+    @data = DataQuery.new().get_map_data
+    respond_to do |format|
+      format.js
+      format.html #{ redirect_to graphs_path }
+    end
+  end
+  
 private
 
   def check_permissions
