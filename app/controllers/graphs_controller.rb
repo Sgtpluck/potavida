@@ -7,14 +7,14 @@ class GraphsController < ApplicationController
 
   def histogram
     respond_to do |format|
-      format.js
+      format.json { head :no_content }
       format.html { redirect_to graphs_path }
     end
   end
 
   def bar
     respond_to do |format|
-      format.js
+      format.json { head :no_content }
       format.html { redirect_to graphs_path }
     end
   end
