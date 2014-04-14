@@ -13,6 +13,8 @@ gem 'kaminari'
 gem 'capybara'
 gem 'poltergeist'
 
+gem 'httparty'
+
 gem 'bcrypt-ruby'
 gem 'figaro'
 gem 'brakeman'
