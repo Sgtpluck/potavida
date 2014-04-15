@@ -20,10 +20,11 @@ $(document).ready(function() {
     $(function () { 
       $('#container4').highcharts({
         chart: {
-            type: 'bar'
+            type: 'bar',
+            inverted: true
         },
         title: {
-            text: 'Fruit Consumption'
+            text: 'Da Infomation'
         },
         xAxis: {
             categories: ['Apples', 'Bananas', 'Oranges']
