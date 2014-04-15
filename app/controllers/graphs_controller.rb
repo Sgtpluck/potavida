@@ -13,8 +13,9 @@ class GraphsController < ApplicationController
   end
 
   def bar
+    @bar_data = DataQuery.new().get_bar_data
     respond_to do |format|
-      format.json { head :no_content }
+      format.json { render json: @bar_data }
       format.html { redirect_to graphs_path }
     end
   end

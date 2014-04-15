@@ -21,7 +21,7 @@ Potaomg::Application.configure do
         user_name:            "blake.jennings@gmail.com", 
         password:             ENV["MAILER_KEY"], # A MANDRILL API KEY  
         authentication:       'login',  
-        domain:               'peas-n-queues.herokuapp.com'}
+        domain:               'localhost'}
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000}
   # Don't care if the mailer can't send.

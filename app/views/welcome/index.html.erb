@@ -41,7 +41,8 @@
               <li> <a href="#contact" class="smoothScroll"> Contact</a> </li>
               <li> <div id='hidden_form'> <%= render '/sessions/form' %> </div> </li>
               <% unless current_user %>
-              <li><%= link_to 'Sign In', sign_in_path, id: 'sign_in', remote: true %></li>
+              <li><%= link_to 'Sign In', sign_in_path, id: 'sign_in', remote: true %>
+                </li>
               <% else %>
               <li id='current'><%= link_to 'Profile', user_path(current_user) %></li>
                  <li id='current'><%= link_to 'Sign Out', sign_out_path %></li>

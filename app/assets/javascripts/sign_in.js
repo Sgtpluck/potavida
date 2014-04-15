@@ -26,7 +26,6 @@ $(document).ready(function(){
                 },
                 error: function(xhr, textStatus, errorThrown) {
                     alert("There was a problem signing in.");
-                    console.log(data)
                 }
             });
             e.preventDefault();
