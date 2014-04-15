@@ -104,13 +104,13 @@ $(document).ready(function() {
                 name:'Curve',
                 type:'spline',
                 visible:false,
-                data: [3,2,1,6,10,5,13,9,14,21,23,66,47,14,5,2],
+                data: [4, 5, 6, 3, 4, 2, 7, 8, 4, 3, 1, 0, 9, 7, 1, 4, 1, 3, 9, 8, 5, 3],
                 //color: 'rgba(204,204,255,.85)'
             },{
                 name:'Filled Curve',
                 type:'areaspline',
                 visible:false,
-                data: [3,2,1,6,10,5,13,9,14,21,23,66,47,14,5,2],
+                data: [4, 5, 6, 3, 4, 2, 7, 8, 4, 3, 1, 0, 9, 7, 1, 4, 1, 3, 9, 8, 5, 3],
                 //color: 'rgba(204,204,255,.85)'
             }]
         });

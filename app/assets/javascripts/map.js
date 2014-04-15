@@ -34,6 +34,7 @@ $(document).ready(function() {
               water_pins(data);
               handler.bounds.extendWith(markers);
               handler.fitMapToBounds();
+              handler.getMap().setZoom(13);
             });
           }
         },
