@@ -26,7 +26,6 @@ $(document).ready(function() {
         url: url,
         dataType: 'json',
         success: function(data) {
-          var water_data = data
           $("#container4").append("<div id='map'></div>");
           if ($('#map').length) {
             handler = Gmaps.build('Google');
