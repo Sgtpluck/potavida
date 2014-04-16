@@ -34,8 +34,8 @@ $(document).ready(function(){
   });
 
     $('.close').click(function (e) {
-        style.hide();
-        link_style.show();
+        form.hide();
+        sign_in_link.show();
     });
 
 
