@@ -27,6 +27,14 @@ class GraphsController < ApplicationController
       format.html { redirect_to graphs_path }
     end
   end
+
+  def batt
+    @batt_data = DataQuery.new().get_batt_data
+    respond_to do |format|
+      format.json { render json: @batt_data }
+      format.html { redirect_to graphs_path }
+    end
+  end
   
 private
 

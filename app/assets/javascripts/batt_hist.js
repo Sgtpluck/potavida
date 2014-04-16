@@ -1,16 +1,17 @@
 $(document).ready(function() {
   // var button = document.querySelector('#bar_link')
 
-  $('#histo_link').click(function (e) {
+  $('#batt_link').click(function (e) {
     $('#container4').empty();
 
-    var url = $('#histo_link').attr('href');
+    var url = $('#batt_link').attr('href');
 
     $.ajax({
         type: 'GET',
         url: url,
-        success: function() {
-          console.log("The button worked")
+        success: function(data) {
+            console.log(data)
+            batt_data(data)
         },
         error: function(xhr, textStatus, errorThrown) {
           alert(errorThrown);
@@ -18,7 +19,7 @@ $(document).ready(function() {
     });
     e.preventDefault();
 
-    $(function () { 
+    function batt_data(batt_results) { 
       $('#container4').highcharts({
         chart: {
                 renderTo:'container',
@@ -69,7 +70,7 @@ $(document).ready(function() {
                 }
             },
             xAxis:{
-                title: {text: 'Uses per 20 Day Cycle'},
+                categories: batt_results['categories'],
                 labels:{
                     rotation:-90,
                     y:40,
@@ -93,26 +94,14 @@ $(document).ready(function() {
                 tickLength:3,
                 tickColor:'#ccc',
                 lineColor:'#ccc',
-                tickInterval:25,
+                tickInterval:4,
                 //endOnTick:false,
             },
             series: [{
-                name:'Times used',
-                data: [4, 5, 6, 3, 4, 2, 7, 8, 4, 3, 1, 0, 9, 7, 1, 4, 1, 3, 9, 8, 5, 3],
-            },{
-                name:'Curve',
-                type:'spline',
-                visible:false,
-                data: [4, 5, 6, 3, 4, 2, 7, 8, 4, 3, 1, 0, 9, 7, 1, 4, 1, 3, 9, 8, 5, 3],
-                //color: 'rgba(204,204,255,.85)'
-            },{
-                name:'Filled Curve',
-                type:'areaspline',
-                visible:false,
-                data: [4, 5, 6, 3, 4, 2, 7, 8, 4, 3, 1, 0, 9, 7, 1, 4, 1, 3, 9, 8, 5, 3],
-                //color: 'rgba(204,204,255,.85)'
+                name:'Battery Counts',
+                data: batt_results['data']
             }]
         });
-    });
+    }
   });
 });
