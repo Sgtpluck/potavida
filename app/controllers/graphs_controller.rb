@@ -6,8 +6,9 @@ class GraphsController < ApplicationController
   end
 
   def histogram
+    @histo_data = DataQuery.new().get_histo_cycle
     respond_to do |format|
-      format.json { head :no_content }
+      format.json {  render json: @histo_data }
       format.html { redirect_to graphs_path }
     end
   end
