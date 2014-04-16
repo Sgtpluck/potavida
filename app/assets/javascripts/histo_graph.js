@@ -9,8 +9,9 @@ $(document).ready(function() {
     $.ajax({
         type: 'GET',
         url: url,
-        success: function() {
-          console.log("The button worked")
+        success: function(data) {
+            console.log(data)
+            hist_data(data)
         },
         error: function(xhr, textStatus, errorThrown) {
           alert(errorThrown);
@@ -18,7 +19,7 @@ $(document).ready(function() {
     });
     e.preventDefault();
 
-    $(function () { 
+    function hist_data(hist_results) { 
       $('#container4').highcharts({
         chart: {
                 renderTo:'container',
@@ -70,6 +71,7 @@ $(document).ready(function() {
             },
             xAxis:{
                 title: {text: 'Uses per 20 Day Cycle'},
+                categories: hist_results['categories'],
                 labels:{
                     rotation:-90,
                     y:40,
@@ -98,21 +100,21 @@ $(document).ready(function() {
             },
             series: [{
                 name:'Times used',
-                data: [4, 5, 6, 3, 4, 2, 7, 8, 4, 3, 1, 0, 9, 7, 1, 4, 1, 3, 9, 8, 5, 3],
+                data: hist_results['data']
             },{
                 name:'Curve',
                 type:'spline',
                 visible:false,
-                data: [4, 5, 6, 3, 4, 2, 7, 8, 4, 3, 1, 0, 9, 7, 1, 4, 1, 3, 9, 8, 5, 3],
+                data: hist_results['data']                
                 //color: 'rgba(204,204,255,.85)'
             },{
                 name:'Filled Curve',
                 type:'areaspline',
                 visible:false,
-                data: [4, 5, 6, 3, 4, 2, 7, 8, 4, 3, 1, 0, 9, 7, 1, 4, 1, 3, 9, 8, 5, 3],
+                data: hist_results['data']
                 //color: 'rgba(204,204,255,.85)'
             }]
         });
-    });
+    }
   });
 });
