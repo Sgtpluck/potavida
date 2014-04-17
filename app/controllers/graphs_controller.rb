@@ -38,11 +38,8 @@ class GraphsController < ApplicationController
   end
   
   def date_range
-    @hist_data = DataQuery.new(params).get_hist_date
-    respond_to do |format|
-      format.json { render json: @hist_data }
-      format.html { redirect_to graphs_path }
-    end
+    @hist_data = DataQuery.new().get_hist_date(params)
+    render json: @hist_data.to_json
   end
 
 private
