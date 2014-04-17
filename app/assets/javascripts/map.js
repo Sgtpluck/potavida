@@ -3,6 +3,7 @@ $(document).ready(function() {
 
   $('#map_link').click(function (e) {
     $('#container4').empty();
+    $("#hist_date_picker").hide();
     var url = $('#map_link').attr('href');
     function water_pins(water_data) {
       $.each(water_data["water_datum"], function( index, value ) {
