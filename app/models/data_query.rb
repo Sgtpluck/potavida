@@ -15,4 +15,8 @@ class DataQuery
   def get_histo_cycle
     HTTParty.get("http://ec2-54-187-74-129.us-west-2.compute.amazonaws.com/histo_cycle")
   end
+
+  def get_hist_date
+    HTTParty.get("http://localhost:4000/histo_query")
+  end
 end

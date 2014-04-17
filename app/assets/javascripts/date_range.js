@@ -1,18 +1,18 @@
 $(document).ready(function() {
   // var button = document.querySelector('#bar_link')
 
-  $('#batt_link').click(function (e) {
+  $('#hist_date_submit').click(function (e) {
     $('#container4').empty();
-    $("#hist_date_picker").hide();
 
-    var url = $('#batt_link').attr('href');
+    var url = $('#histo_date_submit').attr('href');
 
     $.ajax({
         type: 'GET',
         url: url,
         success: function(data) {
-            console.log(data)
-            batt_data(data)
+            $("#hist_date_picker").show();
+            console.log(data);
+            hist_data(data);
         },
         error: function(xhr, textStatus, errorThrown) {
           alert(errorThrown);
@@ -20,7 +20,7 @@ $(document).ready(function() {
     });
     e.preventDefault();
 
-    function batt_data(batt_results) { 
+    function hist_data(hist_results) { 
       $('#container4').highcharts({
         chart: {
                 renderTo:'container',
@@ -71,7 +71,8 @@ $(document).ready(function() {
                 }
             },
             xAxis:{
-                categories: batt_results['categories'],
+                title: {text: 'Uses per 20 Day Cycle'},
+                categories: hist_results['categories'],
                 labels:{
                     rotation:-90,
                     y:40,
@@ -95,12 +96,24 @@ $(document).ready(function() {
                 tickLength:3,
                 tickColor:'#ccc',
                 lineColor:'#ccc',
-                tickInterval:4,
+                tickInterval:25,
                 //endOnTick:false,
             },
             series: [{
-                name:'Battery Counts',
-                data: batt_results['data']
+                name:'Times used',
+                data: hist_results['data']
+            },{
+                name:'Curve',
+                type:'spline',
+                visible:false,
+                data: hist_results['data']                
+                //color: 'rgba(204,204,255,.85)'
+            },{
+                name:'Filled Curve',
+                type:'areaspline',
+                visible:false,
+                data: hist_results['data']
+                //color: 'rgba(204,204,255,.85)'
             }]
         });
     }

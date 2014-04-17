@@ -19,6 +19,7 @@ Potaomg::Application.routes.draw do
   get '/graphs/histogram',      to: 'graphs#histogram'
   get '/graphs/map',            to: 'graphs#map'
   get '/graphs/batt',           to: 'graphs#batt'
+  get '/graphs/date_range',     to: 'graphs#date_range'
 
 
   get '/signin',                to: 'sessions#new', as: :sign_in
