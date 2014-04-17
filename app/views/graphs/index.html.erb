@@ -12,7 +12,7 @@
 <%= link_to "Map", "/graphs/map", class: "btn btn-large btn-danger", id:"map_link" %>
 
 <div id='hist_date_picker'>
-  <%= form_tag action: 'date_range' do %>
+  <%= form_tag( { action: 'date_range' }, id: 'hist_date_form') do %>
     <%= label_tag 'Beginning Date' %>
     <%= date_field_tag 'begin_date' %>
     <%= label_tag 'Ending Date' %>
