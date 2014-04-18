@@ -1,4 +1,4 @@
-<div id="container4">
+<div id="container4" data-drop-url='<%= asset_path("droplet.png") %>'>
 </div>
 
 <%= link_to "Bar Graph?", "/graphs/bar", class: "btn btn-large btn-success", id:"bar_link", :remote => :true %>
@@ -10,6 +10,7 @@
 
 
 <%= link_to "Map", "/graphs/map", class: "btn btn-large btn-danger", id:"map_link" %>
+
 
 <div id='hist_date_picker'>
   <%= form_tag( { action: 'date_range' }, id: 'hist_date_form', method: 'get') do %>

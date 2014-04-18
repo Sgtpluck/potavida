@@ -1,4 +1,13 @@
+.user_table {
+  width: 80%
+}
+
 .user_table th, td {
-  padding: 8px 100px 8px 4px;
   border-bottom: 1px solid black;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.user_table th {
+  padding: 8px 100px 8px 4px;
 }

@@ -12,7 +12,7 @@ $(document).ready(function() {
           "lat": value["lat"],
           "lng": value["long"],
           "picture": {
-            "url": "assets/droplet.png",
+            "url": $('#container4').data('drop-url'),
             "width":  36,
             "height": 36
             },
