@@ -26,11 +26,7 @@ $(document).ready(function() {
     });
     e.preventDefault();
 
-<<<<<<< HEAD
-    function hist_data(hist_results) { 
-=======
     function hist_data(hist_results) {
->>>>>>> 59481da4a641d58b8425a563724f705933bcd78a
       $('#container4').highcharts({
         chart: {
                 renderTo:'container',
