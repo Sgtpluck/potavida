@@ -11,7 +11,7 @@ $(document).ready(function() {
           "lat": value["lat"],
           "lng": value["long"],
           "picture": {
-            // "url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
+            "url": "assets/droplet.png",
             "width":  36,
             "height": 36
             },
