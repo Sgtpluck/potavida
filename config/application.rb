@@ -8,7 +8,7 @@ Bundler.require(:default, Rails.env)
 
 module Potaomg
   class Application < Rails::Application
-    config.assets.precompile = ['*.js', '*.css', '*.css.erb']
+    config.assets.precompile = ['*.js', '*.css', '*.css.erb', '*.png']
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
