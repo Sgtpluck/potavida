@@ -15,7 +15,10 @@ $(document).ready(function() {
             "width":  36,
             "height": 36
             },
-          "infowindow": value["serial"].toString()
+          "infowindow": "Serial Number: " + value["serial"].toString() 
+                                          + "<br>Cycles: " 
+                                          + value["cycles"].toString()
+                                          + "<br>Battery: " + value["vbatt"].toString()
           }
         ]);
       });
