@@ -46,7 +46,8 @@
 }
 
 #greywrap {
-  background-image: url(asset_path('woman_well.png'));
+  background-image: image-url('woman_well.png');
+  width: 100%;
 }
 
 .words, h1 {
