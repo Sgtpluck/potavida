@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 .sign_in {
   margin-left: 95%;
   margin-top: 2%;
@@ -44,4 +43,8 @@
 
 .gimme_some_space {
   margin-top: 50px;
+}
+
+#greywrap {
+  background-image: url(asset_path('well.jpeg'));
 }
