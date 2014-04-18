@@ -41,6 +41,7 @@ class UsersController < ApplicationController
 
   def update_user_role
     @user.update_roles(params)
+    redirect_to 'index'
   end
 
   private

@@ -19,6 +19,7 @@ describe PostsController do
 
         it "creates a post" do
           post_count = Post.count
+          puts valid_attributes
           post :create, post: valid_attributes
           expect(Post.count).to eq(post_count + 1)
         end
@@ -73,7 +74,7 @@ describe PostsController do
       
   context "when a signed-in user is NOT admin" do
     before do 
-      @current_user = create(:user_field)
+      @current_user = create(:user_manager)
       session[:user_id] = @current_user.id
     end
 

@@ -22,7 +22,7 @@ describe UsersController do
     end
 
     it 'should have an array of users' do
-      user1 = create(:user_field)
+      user1 = create(:user_manager)
       user2 = create(:user_client)
       get :index, id: user.id
 
@@ -31,6 +31,10 @@ describe UsersController do
   end
   
   describe 'get "show"' do
+    before do 
+      session[:user_id] = user.id
+    end
+    
     it 'should be successful for a logged-in user' do
       get :show, id: user.id
 
@@ -74,7 +78,7 @@ describe UsersController do
 
   describe "get 'edit'" do
     it "should redirect if the user is trying to navigate to someone else's profile page" do
-      user2 = create(:user_field)
+      user2 = create(:user_manager)
       session[:user_id] = user.id
       get :edit, id: user2.id
 
@@ -104,7 +108,7 @@ describe UsersController do
   end # ends 'updating users'
 
   describe 'get "change_user_role"' do
-    let!(:user2) { create(:user_field) }
+    let!(:user2) { create(:user_manager) }
 
     before do
       session[:user_id] = user.id
@@ -125,7 +129,7 @@ describe UsersController do
 
   describe 'patch user role' do
     it 'should update the user role' do
-      user2 = create(:user_field)
+      user2 = create(:user_manager)
       session[:user_id] = user.id
       patch :update_user_role, id: user2.id, role: 'admin'
       user2.reload
