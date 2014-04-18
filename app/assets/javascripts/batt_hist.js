@@ -3,6 +3,7 @@ $(document).ready(function() {
 
   $('#batt_link').click(function (e) {
     $('#container4').empty();
+    $("#hist_date_picker").hide();
 
     var url = $('#batt_link').attr('href');
 

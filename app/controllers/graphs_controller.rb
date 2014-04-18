@@ -37,6 +37,11 @@ class GraphsController < ApplicationController
     end
   end
   
+  def date_range
+    @hist_data = DataQuery.new().get_hist_date(params)
+    render json: @hist_data.to_json
+  end
+
 private
 
   def check_permissions

@@ -3,8 +3,6 @@ $(document).ready(function() {
 
   $('#hist_date_submit').click(function (e) {
     $('#container4').empty();
-    console.log($('#begin_date').val())
-    console.log($('#end_date').val())
 
     var url = $('#histo_date_form').attr('href');
     var begin = $('#begin_date').val() + "+10:45:44+-0700";
@@ -15,10 +13,12 @@ $(document).ready(function() {
         data: { beginning_date: begin,
                 ending_date: end
             },
-        url: url,
+        dataType: 'json',
+        url: 'graphs/date_range',
         success: function(data) {
             $("#hist_date_picker").show();
             console.log(data)
+            hist_data(data);
         },
         error: function(xhr, textStatus, errorThrown) {
           alert(errorThrown);
@@ -26,7 +26,11 @@ $(document).ready(function() {
     });
     e.preventDefault();
 
+<<<<<<< HEAD
     function hist_data(hist_results) { 
+=======
+    function hist_data(hist_results) {
+>>>>>>> 59481da4a641d58b8425a563724f705933bcd78a
       $('#container4').highcharts({
         chart: {
                 renderTo:'container',

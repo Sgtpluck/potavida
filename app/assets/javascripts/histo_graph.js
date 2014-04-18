@@ -10,8 +10,9 @@ $(document).ready(function() {
         type: 'GET',
         url: url,
         success: function(data) {
-            console.log(data)
-            hist_data(data)
+            $("#hist_date_picker").show();
+            console.log(data);
+            hist_data(data);
         },
         error: function(xhr, textStatus, errorThrown) {
           alert(errorThrown);
