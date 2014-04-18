@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :check_admin, except: [:show, :edit, :update]
-  before_action :find_user, only: [:edit, :update, :show, :update_user_role]
+  before_action :find_user, only: [:edit, :update, :show, :update_user_role, :change_user_role]
   layout 'user'
 
   def index
@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    redirect_to users_path unless current_user.id == @user.id
   end
 
   def new
@@ -24,7 +25,7 @@ class UsersController < ApplicationController
   end
 
   def edit
-    redirect_to user_path unless current_user.id == params[:id].to_i
+    redirect_to users_path unless current_user.id == @user.id
   end
 
   def update
@@ -40,7 +41,6 @@ class UsersController < ApplicationController
 
   def update_user_role
     @user.update_roles(params)
-    redirect_to users_path
   end
 
   private

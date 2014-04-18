@@ -93,7 +93,7 @@ body {
     font-family: "Lato";
     font-weight: 300;
     font-size: 16px;
-    color: #555;
+    color: #000;
 
     -webkit-font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch;
@@ -349,7 +349,7 @@ a:after {
 }
 
 #footerwrap {
-	background-color: #79BEDB;
+	background-color: #26ace0;
 	margin-top: 0px;
 	padding-top: 40px;
     width: 100%;

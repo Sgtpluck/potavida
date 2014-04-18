@@ -4,9 +4,9 @@ $(document).ready(function() {
   $('#hist_date_submit').click(function (e) {
     $('#container4').empty();
 
-    // var url = $('#hist_date_form').attr('href');
-    var begin = $('#begin_date').val() + " 10:45:44 -0700";
-    var end = $('#end_date').val() + " 10:45:44 -0700";
+    var url = $('#histo_date_form').attr('href');
+    var begin = $('#begin_date').val() + "+10:45:44+-0700";
+    var end = $('#end_date').val() + "+10:45:44+-0700";
 
     $.ajax({
         type: 'GET',

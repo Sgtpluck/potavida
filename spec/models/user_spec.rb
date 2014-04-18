@@ -46,7 +46,7 @@ describe User do
 
   describe 'update roles' do
     it 'should update the user role' do
-      user2 = create(:user_field)
+      user2 = create(:user_manager)
       user2.update_roles({role: 'admin'})
 
       expect(user2.role).to eq 'admin'
