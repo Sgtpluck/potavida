@@ -16,7 +16,7 @@
             <h3 class="blog-post-title"><%= link_to("#{post.title}", "/posts/#{post.id}") %></h3>
             <p class="blog-post-meta"><%= post.date.strftime('%b %d, %Y') %> by <%= post.user.name %></p>
 
-            <p><%= post.content %></p>
+            <p><%= markdown post.content %></p>
             <hr>
             <% end %>
           </div><!-- /.blog-post -->
