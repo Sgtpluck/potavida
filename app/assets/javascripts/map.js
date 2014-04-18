@@ -16,7 +16,6 @@ $(document).ready(function() {
             "width":  36,
             "height": 36
             },
-          do_clustering: true,
           "infowindow": "Serial Number: " + value["serial"].toString() 
                                           + "<br>Cycles: " 
                                           + value["cycles"].toString()
