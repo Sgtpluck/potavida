@@ -2,15 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.subscriber_submit.btn.btn-primary {
+  margin-left: 19%;
+  margin-top: 3%;
+  background-color: #EDC647;
+}
+
+
 .sign_in {
   margin-left: 95%;
   margin-top: 2%;
 }
 
 #sign_in_here {
-  text-align: right;
-  
+  text-align: right; 
 }
+
+/*a.smoothScroll { being overridden??
+  color: red;
+}*/
 
 .side-photo {
   opacity: .3;
@@ -46,7 +56,9 @@
 }
 
 #greywrap {
-  background-image: url(asset_path('woman_well.png'));
+  background-image: image-url('woman_well.png');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .words {
