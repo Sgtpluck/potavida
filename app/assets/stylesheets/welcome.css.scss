@@ -47,7 +47,8 @@
 
 #greywrap {
   background-image: image-url('woman_well.png');
-  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .words, h1 {
