@@ -8,6 +8,15 @@
   background-color: rgb(241, 183, 58);
 }
 
+/*.section-divider.textdivider.divider2 {
+  background-color: #BAB7AD;
+  height: 5%; 
+  opacity: .3;  
+}*/
+
+.row {
+  padding-top: 0;
+}
 
 .sign_in {
   margin-left: 95%;
@@ -17,10 +26,6 @@
 #sign_in_here {
   text-align: right; 
 }
-
-/*a.smoothScroll { being overridden??
-  color: red;
-}*/
 
 .side-photo {
   opacity: .3;
