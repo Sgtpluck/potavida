@@ -2,12 +2,19 @@ body.posts {
   padding-top: 7%;
 }
 
-div.col-sm-3.col-sm-offset-1.blog-sidebar {
-  
+.col-sm-8.blog-main {
+  margin-left: 15%;
+  margin-bottom: 5%;
 }
 
 .blog-title {
-  font-weight: bold ;
+  font-weight: bold;
+  color: rgb(241, 183, 58);
+}
+
+.blog-header {
+  text-align: center;
+/*  margin-left: 10%;*/
 }
 
 .wmd-input {
