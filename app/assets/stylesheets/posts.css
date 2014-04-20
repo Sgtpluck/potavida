@@ -2,7 +2,7 @@ body.posts {
   padding-top: 7%;
 }
 
-.col-sm-8.blog-main {
+.col-sm-8.blog-main.show {
   margin-left: 15%;
   margin-bottom: 5%;
 }
@@ -12,7 +12,7 @@ body.posts {
   color: rgb(241, 183, 58);
 }
 
-.blog-header {
+.blog-header.show {
   text-align: center;
 /*  margin-left: 10%;*/
 }
