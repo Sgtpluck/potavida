@@ -32,10 +32,10 @@
                     <%= @user.name %> <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
-                  <li><%= link_to 'Edit your information', edit_user_path %>
+                  <li><%= link_to 'Edit your information', edit_user_path(@user.id) %>
                   </li>
                   <% if @user.role == 'admin' %>
-                  <li><%= link_to 'Create A New User', new_user_path %>
+                  <li><%= link_to 'Create A New User', new_user_path(:id => @user.id) %>
                   </li>
                   <li>
                     <%= link_to 'See Users', users_path %>
