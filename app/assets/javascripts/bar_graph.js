@@ -9,6 +9,7 @@ $(document).ready(function() {
     $.ajax({
         type: 'GET',
         url: url,
+        dataType: 'json',
         success: function(data) {
           bar_data(data)
         },
@@ -24,24 +25,23 @@ $(document).ready(function() {
               type: 'column'
           },
           title: {
-              text: 'PotaVida Serial Data'
+              text: 'PotaVida Data Based On Serial Units'
           },
           subtitle: {
               text: 'Source: PotaData'
           },
-          xAxis: { categories:
-              bar_results['xAxis']['categories']
+          xAxis: { 
+              title: {
+                text: 'Serial Units'
+              }
           },
           yAxis: {
-              min: 0,
-              title: {
-                  text: '# Times'
-              }
+              min: 0
           },
           tooltip: {
               headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
               pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                  '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+                  '<td style="padding:0"><b>{point.y}</b></td></tr>',
               footerFormat: '</table>',
               shared: true,
               useHTML: true
