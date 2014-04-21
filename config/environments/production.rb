@@ -8,11 +8,11 @@ Potaomg::Application.configure do
         user_name:            "blake.jennings@gmail.com", 
         password:             ENV["MAILER_KEY"], # A MANDRILL API KEY  
         authentication:       'login',  
-        domain:               'http://ec2-54-187-1-90.us-west-2.compute.amazonaws.com'}
+        domain:               'http://ec2-54-187-116-152.us-west-2.compute.amazonaws.com'}
 
   config.action_mailer.raise_delivery_errors = true
 
-  config.action_mailer.default_url_options = { host: 'http://ec2-54-187-1-90.us-west-2.compute.amazonaws.com' }
+  config.action_mailer.default_url_options = { host: 'http://ec2-54-187-116-152.us-west-2.compute.amazonaws.com'}
   # Code is not reloaded between requests.
   config.cache_classes = true
 
