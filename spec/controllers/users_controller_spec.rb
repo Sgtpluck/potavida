@@ -46,14 +46,14 @@ describe UsersController do
     it 'should allow only an admin to access' do
       session[:user_id] = user.id
       user.update(role: 'client')
-      get :new
+      get :new, id: user.id
 
       expect(response).to be_redirect
     end
 
     it 'should create a new user' do
       session[:user_id] = user.id
-      get :new
+      get :new, id: user.id
       post 'create', { user:    { name: 'Blake',
                                 email: 'blake@blake.com',
                                 password: 'password',
@@ -64,7 +64,7 @@ describe UsersController do
 
     it 'should increase the User count by 1' do
       session[:user_id] = user.id
-      get :new
+      get :new, id: user.id
       
       expect { post 'create', { user:    { name: 'Blake',
                                 email: 'blake@blake.com',

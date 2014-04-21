@@ -27,9 +27,27 @@
               <li class="hidden-xs"><%= image_tag 'pvlogo.png', class: 'logo', width: 150 %></li> 
               <li><%= link_to 'Home', root_path %></li>
               <li><%= link_to 'Sign Out', sign_out_path %></li>
-              <li><%= link_to 'Profile', user_path(current_user) %></li>
-            </ul>
-            
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <%= @user.name %> <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to 'Edit your information', edit_user_path(@user.id) %>
+                  </li>
+                  <% if @user.role == 'admin' %>
+                  <li><%= link_to 'Create A New User', new_user_path(:id => @user.id) %>
+                  </li>
+                  <li>
+                    <%= link_to 'See Users', users_path %>
+                  </li>
+                  <li>
+                    <%= link_to 'Write Blog Post', new_post_path %>
+                  </li>
+                  <li><%= link_to 'Sign Out', sign_out_path %></li>  
+                  <% end %>
+                </ul>
+              </li>
+          </ul>
           </div>
         </div>
       </div>
