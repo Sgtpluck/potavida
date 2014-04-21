@@ -2,9 +2,21 @@ body.posts {
   padding-top: 7%;
 }
 
+.container.nav {
+  margin-left: 15%;
+}
+
+.sidebar-module {
+  margin-left: 15%;
+}
+
 .col-sm-8.blog-main.show {
   margin-left: 15%;
   margin-bottom: 5%;
+}
+
+body.post {
+  margin-left: 8%;
 }
 
 .blog-title {
