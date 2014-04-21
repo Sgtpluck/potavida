@@ -2,12 +2,31 @@ body.posts {
   padding-top: 7%;
 }
 
-div.col-sm-3.col-sm-offset-1.blog-sidebar {
-  
+.container.nav {
+  margin-left: 15%;
+}
+
+.sidebar-module {
+  margin-left: 15%;
+}
+
+.col-sm-8.blog-main.show {
+  margin-left: 15%;
+  margin-bottom: 5%;
+}
+
+body.post {
+  margin-left: 8%;
 }
 
 .blog-title {
-  font-weight: bold ;
+  font-weight: bold;
+  color: rgb(241, 183, 58);
+}
+
+.blog-header.show {
+  text-align: center;
+/*  margin-left: 10%;*/
 }
 
 .wmd-input {

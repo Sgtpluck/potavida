@@ -22,7 +22,7 @@
             </button>
         </div>
       <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav" id='headers'>
+          <ul class="nav navbar-nav" id='headers'%>
               <li class="hidden-xs"><%= image_tag 'pvlogo.png', class: 'logo', width: 150 %></li>
               <li> <a href="#home" class="smoothScroll">Home</a> </li>
               <li> <a href="#about" class="smoothScroll"> Mission </a> </li>
@@ -63,12 +63,18 @@
   </div><!-- navbar main -->
     
     <!-- ==== ABOUT ==== -->
+
     <div class="container" id="about" name="about">
+
       <div class="row white">
-        <div class="gimme_some_space">
-        </div>
-      <br>
-      <br>
+<div class="col-lg-offset-1 col-lg-10 centered">
+
+        <h1>Our Mission</h1>
+        <hr>
+      </div>
+      </div>      
+      <div class="row white">
+
         <div class="col-lg-6">
           <h2>Lowering the Cost of Access to Safe Water</h2>
           <p>
@@ -86,9 +92,7 @@
         </div><!-- col-lg-6 -->
       </div><!-- row -->
     </div><!-- container -->
-    <div class="gimme_some_space">
-        </div>
-    
+
     <!-- ==== SECTION DIVIDER1 -->
     <section class="section-divider textdivider divider2">
       <div class="container">
@@ -100,15 +104,14 @@
     
     <!-- ==== SERVICES ==== -->
     <div class="container" id="services" name="services">
-      <br>
-      <br>
+
       <div class="row">
         <div class="gimme_some_space">
         </div>
         <h2 class="centered">PotaVida's Solution is Different:</h2>
         <hr>
         <br>
-        <div class="col-lg-offset-2 col-lg-8">
+        <div class="col-lg-offset-1 col-lg-10">
           <p>Until now, there has not been a reliable way to determine when solar disinfection has actually been achieved. PotaVida has developed a simple UV and temperature monitor that visually indicates to users when water disinfection is underway, and when water is safe to drink. Users can press a button to query disinfection status at any point. The electronic monitor stores usage data, which can then be wirelessly transmitted to a handheld smartphone-based device for upload to an online database along with GPS position. 
             <br><br>
           PotaVida’s current purifier design is a 3L water bag with an integrated solar disinfection monitor and data logger. The solar disinfection monitor tracks cumulative exposure to sunlight and uses LEDs to indicate when sufficient exposure has been reached to inactivate pathogens in the water. Users can simply fill the bag with water, place it in the sun, push a button, and wait for the LED indicator to indicate that the water is safe.
@@ -138,8 +141,9 @@
       <div class="row">
         <div class="gimme_some_space">
         </div>
-          <div class="col-lg-offset-2 col-lg-8">
+          <div class="col-lg-offset-1 col-lg-10">
           <h1 class='centered'>Technical Summary</h1>
+          <hr>
             <p>Solar disinfection is a process recommended by the World Health Organization which uses the UV in sunlight to inactive pathogens in water. Both bacteria and viruses are inactivated by solar disinfection. The process takes a few hours, depending on weather, water clarity, and the UV transparency of the container. In addition, temperatures above 45oC increase the speed at which pathogens are destroyed. When combined with these increased temperatures, amoebeas, cysts, and spores are also destroyed by solar disinfection.
               <br><br>
             Depending on conditions, users can complete as many as 3 disinfection cycles daily, resulting in 9L or more of safe water produced per day. We plan to increase the current 3L bag capacity to 5-6L, enabling up to 18L of water disinfection per day.  The bag-based design is foldable and stackable for shipping efficiency. Because the purifiers use no consumables and will operate for several years, the cost per unit volume of safe water over the lifetime of the device is lower than any competing point-of-use water disinfection technology.
@@ -151,8 +155,6 @@
     <!-- ==== TEAM MEMBERS ==== -->
     <div class="container" id="team" name="team">
       <div class="gimme_some_space">
-        </div>
-        <div class="gimme_some_space">
         </div>
       <div class="row white centered">
         <br>
@@ -193,7 +195,7 @@
           <h2 class="centered">FAQ</h2>
           <hr>
           <br>
-          <div class="col-lg-offset-2 col-lg-8">
+          <div class="col-lg-offset-1 col-lg-10">
             <p>Q: What plastic bottles can be used? Don't dangerous chemicals leach from plastics, especially when left in the sun?</p>
 
             <p>A: Thin-walled polyethylene terephthalate, labeled PET or PETE in the US, can be safely used for SODIS. These are marked with the "1" recycling symbol, shown below. Glass bottles can be used, but only if the glass is known to be free of UV-blocking additives, so is not usually recommended.</p>
@@ -299,10 +301,10 @@
               <div class="form_field">
                 <%= f.label :name %>
                 <%= f.text_field :name %>
-                </div>
-                 <div class='subscriber_token'>
-                  <%= form_authenticity_token %>
-                </div>
+              </div>
+              <div class='subscriber_token'>
+                <%= form_authenticity_token %>
+              </div>
               <div class="actions"><%= f.submit class: 'subscriber_submit btn btn-primary' %></div>
             <% end %>
           </p>
