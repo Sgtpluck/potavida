@@ -2,6 +2,10 @@ body.posts {
   padding-top: 7%;
 }
 
+h4 {
+  color: rgb(61, 155, 213);
+}
+
 .twitter-timeline {
   background-color: #F0EEEB;
   padding: 5%;

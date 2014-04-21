@@ -13,6 +13,7 @@
 
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap.min
 //= require wmd/wmd
 //= require wmd/showdown
 //= require gmaps/google

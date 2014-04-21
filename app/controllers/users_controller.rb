@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :check_admin, except: [:show, :edit, :update]
-  before_action :find_user, only: [:edit, :update, :show, :update_user_role, :change_user_role]
+  before_action :find_user, only: [:new, :edit, :update, :show, :update_user_role, :change_user_role, :index]
   layout 'user'
 
   def index
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new
+    @new_user = User.new
   end
 
   def create
