@@ -30,18 +30,6 @@ describe UsersController do
     end
   end
   
-  describe 'get "show"' do
-    before do 
-      session[:user_id] = user.id
-    end
-    
-    it 'should be successful for a logged-in user' do
-      get :show, id: user.id
-
-      expect(response).to be_successful
-    end
-  end
-
   describe 'get "new"' do
     it 'should allow only an admin to access' do
       session[:user_id] = user.id

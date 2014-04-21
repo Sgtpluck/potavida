@@ -6,7 +6,7 @@ FactoryGirl.define do
     email "davida@davida.com"
     password "MyString"
     password_confirmation "MyString"
-    role "admin"
+    role "Admin"
     id 4
   end
 
@@ -15,7 +15,7 @@ FactoryGirl.define do
     email "davida@davida.com"
     password "MyString"
     password_confirmation "MyString"
-    role "admin"
+    role "Admin"
   end
 
   factory :user_manager, class: User do
@@ -23,7 +23,7 @@ FactoryGirl.define do
     email "Blake@blake.com"
     password "apassword"
     password_confirmation "apassword"
-    role "manager"
+    role "Manager"
   end
 
   factory :user_client, class: User do
@@ -31,6 +31,6 @@ FactoryGirl.define do
     email "wv@email.com"
     password "MyString"
     password_confirmation "MyString"
-    role "client"
+    role "Client"
   end
 end
