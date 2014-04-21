@@ -37,6 +37,7 @@ class UsersController < ApplicationController
   end
 
   def change_user_role
+    @user
   end
 
   def update_user_role
