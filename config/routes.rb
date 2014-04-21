@@ -27,9 +27,9 @@ Potaomg::Application.routes.draw do
   get '/signout',               to: 'sessions#destroy', as: :sign_out
   
   get '/profile/:id',           to: 'users#show', as: :user
-  get '/users/:id',             to: 'users#index', as: :users
-  get '/users/:id/new',         to: 'users#new', as: :new_user
-  post '/users/:id',                to: 'users#create'
+  get '/users',                 to: 'users#index', as: :users
+  get '/users/new',             to: 'users#new', as: :new_user
+  post '/users',                to: 'users#create'
   get '/user/:id/edit',         to: 'users#edit', as: :edit_user
   patch '/profile/:id',         to: 'users#update'
 

@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
   before_action :check_admin, except: [:show, :edit, :update]
-  before_action :find_user, only: [:new, :edit, :update, :show, :update_user_role, :change_user_role, :index]
+  before_action :find_user, only: [:edit, :update, :show, :update_user_role, :change_user_role]
   layout 'user'
 
   def index
+    @user = current_user
     @users = User.all
   end
 

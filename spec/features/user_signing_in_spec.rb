@@ -11,7 +11,6 @@ describe "the signin process" do
       fill_in 'password', :with => "#{user.password}"
       click_button 'Sign in'
     end
-    expect(page).to have_content 'Sign Out'
-    expect(page).to have_content 'Profile'
+    expect(page).to have_content user.name
   end
 end
