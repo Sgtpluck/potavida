@@ -11,8 +11,7 @@ $(document).ready(function() {
         type: 'GET',
         url: url,
         success: function(data) {
-            console.log(data)
-            batt_data(data)
+            batt_data(data);
         },
         error: function(xhr, textStatus, errorThrown) {
           alert(errorThrown);
@@ -35,16 +34,14 @@ $(document).ready(function() {
             },
             credits:{enabled:false},
             exporting:{enabled:false},
-            title:{text:'Uses per Cycle'},
-            legend:{
-                //enabled:false
-            // },
-            // tooltip:{
-            //     borderWidth:1,
-            //     formatter:function() {
-            //         return '<b>Range:</b><br/> '+ this.x +'<br/>'+
-            //         '<b>Count:</b> '+ this.y;
-            //     }
+            title:{ text:
+                'Battery Voltage Per Unit'},
+            legend: {
+            align: 'right',
+            verticalAlign: 'top',
+            x: -10,
+            y: 50,
+            floating: true
             },
             plotOptions:{
                 column:{
@@ -72,30 +69,35 @@ $(document).ready(function() {
             },
             xAxis:{
                 categories: batt_results['categories'],
+                 title: { text:
+                    'Voltage'
+                },
                 labels:{
-                    rotation:-90,
-                    y:40,
+                    y:20,
                     style: {
-                        fontSize:'8px',
+                        fontSize:'12px',
                         fontWeight:'normal',
                         color:'#333'
                     },
                 },
                 lineWidth:0,
                 lineColor:'#999',
-                tickLength:70,
+                tickLength:10,
                 tickColor:'#ccc',
-                tickInterval: 7
+                tickInterval: .1
             },
             yAxis:{
-                title:{text:'People Using System'},
+                title: { text:
+                    'Units'
+                },
                 //maxPadding:0,
                 gridLineColor:'#e9e9e9',
                 tickWidth:1,
                 tickLength:3,
                 tickColor:'#ccc',
                 lineColor:'#ccc',
-                tickInterval:4,
+                tickInterval:5,
+                alternateGridColor: '#FDFFD5'
                 //endOnTick:false,
             },
             series: [{

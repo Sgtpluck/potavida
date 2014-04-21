@@ -30,7 +30,7 @@ $(document).ready(function() {
         url: url,
         dataType: 'json',
         success: function(data) {
-          $("#container4").append("<div id='map'></div>");
+          $("#container4").append("<h2 class='centered'>Disinfection Units By Location</h2><div id='map'></div>");
           if ($('#map').length) {
             handler = Gmaps.build('Google');
             handler.buildMap({ provider: {}, internal: {id:'map'}}, function(){
@@ -47,27 +47,6 @@ $(document).ready(function() {
     });
     e.preventDefault();
   });
-
-
-  // if ($('#map').length) {
-  //   handler = Gmaps.build('Google');
-  //   handler.buildMap({ provider: {}, internal: {id:'map'}}, function(){
-  //     markers = handler.addMarkers([
-  //       {
-  //         "lat": 47,
-  //         "lng": -122,
-  //         "picture": {
-  //           // "url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
-  //           "width":  36,
-  //           "height": 36
-  //         },
-  //         "infowindow": "hi"
-  //       }
-  //     ]);
-  //     handler.bounds.extendWith(markers);
-  //     handler.fitMapToBounds();
-  //   });  
-  // }
 });
 
 
