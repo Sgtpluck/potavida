@@ -1,45 +1,29 @@
 class GraphsController < ApplicationController
   before_action :check_permissions, only: [:index]
+  respond_to :json
   layout 'user'
 
   def index
   end
 
   def histogram
-    @histo_data = DataQuery.new().get_histo_cycle
-    respond_to do |format|
-      format.json {  render json: @histo_data }
-      format.html { redirect_to graphs_path }
-    end
+    respond_with @histo_data = DataQuery.new().get_histo_cycle
   end
 
   def bar
-    @bar_data = DataQuery.new().get_bar_data
-    respond_to do |format|
-      format.json { render json: @bar_data }
-      format.html { redirect_to graphs_path }
-    end
+    respond_with @bar_data = DataQuery.new().get_bar_data 
   end
 
   def map
-    @map_data= DataQuery.new().get_map_data
-    respond_to do |format|
-      format.json { render json: @map_data }
-      format.html { redirect_to graphs_path }
-    end
+    respond_with @map_data= DataQuery.new().get_map_data
   end
 
   def batt
-    @batt_data = DataQuery.new().get_batt_data
-    respond_to do |format|
-      format.json { render json: @batt_data }
-      format.html { redirect_to graphs_path }
-    end
+    respond_with @batt_data = DataQuery.new().get_batt_data
   end
   
   def date_range
-    @hist_data = DataQuery.new().get_hist_date(params)
-    render json: @hist_data.to_json
+    respond_with @hist_data.to_json = DataQuery.new().get_hist_date(params)
   end
 
 private
