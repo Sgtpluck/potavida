@@ -11,7 +11,7 @@ $(document).ready(function() {
         url: url,
         dataType: 'json',
         success: function(data) {
-          bar_data(data)
+          bar_data(data);
         },
         error: function(xhr, textStatus, errorThrown) {
           alert(errorThrown);
