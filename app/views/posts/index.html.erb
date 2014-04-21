@@ -28,7 +28,7 @@
 
         <div class="col-md-4 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
-            <% if current_user.try(:role) == "admin" %>
+            <% if current_user.try(:role) == "Admin" %>
             <%= link_to 'Create a New Post', new_post_path, class: "btn btn-large btn-success" %>
             <br><br>
             <% end %>
