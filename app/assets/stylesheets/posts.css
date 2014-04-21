@@ -2,6 +2,18 @@ body.posts {
   padding-top: 7%;
 }
 
+.twitter-timeline {
+  background-color: #F0EEEB;
+  padding: 5%;
+  border:2px solid;
+  border-radius:25px;
+  box-shadow: 5px 5px 2px #888888;
+}
+
+.h-entry.tweet.customisable-border {
+  padding: 200px;
+}
+
 .container.nav {
   margin-left: 15%;
 }
