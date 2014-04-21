@@ -1,1 +1,18 @@
-$('#headers').append("<li class='current'><%= j link_to 'Profile', user_path(current_user) %> </li><li class='current'><%= j link_to 'Sign Out', sign_out_path %></li>");
+$('#headers').append("<li class='dropdown' id='current'>"+
+                        "<a class='dropdown-toggle' data-toggle='dropdown' href='#'>"+
+                          "<%= j current_user.name %> <span class='caret'></span></a>"+
+                        "<ul class='dropdown-menu'>"+
+                          "<li><%= j link_to 'Edit your information', edit_user_path(current_user.id) %>"+
+                          "</li>"+
+                          "<% if current_user.role == 'admin' %>"+
+                            "<li><%= j link_to 'Create A New User', new_user_path(:id => current_user.id) %>"+
+                            "</li>"+
+                            "<li><%= j link_to 'See Users', users_path(:id => current_user.id) %>"+
+                            "</li>"+
+                            "<li><%= j link_to 'Write Blog Post', new_post_path %>"+
+                            "</li>"+
+                            "<li><%= j link_to 'Sign Out', sign_out_path %>"+
+                            "</li>"+
+                          "<% end %>"+
+                        "</ul>"+
+                      "</li>");
