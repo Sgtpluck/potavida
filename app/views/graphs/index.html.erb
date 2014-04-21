@@ -1,15 +1,16 @@
-<div id="container4" data-drop-url='<%= asset_url("droplet.png") %>'>
+<div class='sidebar-nav-fixed'>
+  <br><br>
+  <%= link_to "Location Data", "/graphs/map", class: "btn btn-large btn-danger", id:"map_link" %>
+  <br><br>
+  <%= link_to "Battery Histogram", "/graphs/batt", class: "btn btn-large btn-warning", id:"batt_link", :remote => :true %>
+  <br><br>
+  <%= link_to "Histogram", "/graphs/histogram", class: "btn btn-large btn-warning", id:"histo_link", :remote => :true %>
+  <br><br>
+  <%= link_to "Bar Graph", "/graphs/bar", class: "btn btn-large btn-success", id:"bar_link", :remote => :true %>
 </div>
 
-<%= link_to "Bar Graph?", "/graphs/bar", class: "btn btn-large btn-success", id:"bar_link", :remote => :true %>
-
-
-<%= link_to "Histogram?", "/graphs/histogram", class: "btn btn-large btn-warning", id:"histo_link", :remote => :true %>
-
-<%= link_to "Battery Histogram?", "/graphs/batt", class: "btn btn-large btn-warning", id:"batt_link", :remote => :true %>
-
-
-<%= link_to "Map", "/graphs/map", class: "btn btn-large btn-danger", id:"map_link" %>
+<div id="container4" data-drop-url='<%= asset_url("droplet.png") %>'>
+</div>
 
 
 <div id='hist_date_picker'>

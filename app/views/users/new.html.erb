@@ -1,9 +1,9 @@
 Make a new user! 
-  <% @user.errors.full_messages.each do |msg| %>
+  <% @new_user.errors.full_messages.each do |msg| %>
     <%= msg %>
   <% end %>
 
-<%= form_for @user do |f| %>
+<%= form_for @new_user do |f| %>
  <div class="form_field">
     <%= f.label :email %>
     <%= f.text_field :email %>

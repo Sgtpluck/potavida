@@ -29,7 +29,7 @@ class GraphsController < ApplicationController
 private
 
   def check_permissions
-    unless @current_user.try(:role) == "admin" || @current_user.try(:role) == "client"
+    unless @current_user.try(:role) == "Admin" || @current_user.try(:role) == "Client"
       redirect_to root_path
       flash[:notice] = "You don't have permission to view this page."
     end
