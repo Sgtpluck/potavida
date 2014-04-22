@@ -1,19 +1,2 @@
-  <% @press.errors.full_messages.each do |msg| %>
-    <%= msg %><br>
-  <% end %>
-
-<%= form_for @press do |f| %>
- <div class="form_field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-  <div class="form_field">
-    <%= f.label :url %>
-    <%= f.text_field :url %>
-  </div>
-  <div class="form_field">
-    <%= f.label :pubdate%>
-    <%= f.date_field :pubdate %>
-  </div>
-  <div class="actions"><%= f.submit %></div>
-<% end %>
+<h2>Create News Story Here</h2>
+<%= render 'form' %>

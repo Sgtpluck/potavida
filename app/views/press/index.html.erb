@@ -1,0 +1,19 @@
+<h2>All Press</h2>
+<br><br>
+
+<table class='user_table'>
+  <tr>
+    <th>Title</th>
+    <th>Url</th>
+    <th>Publish Date</th>
+    <th></th>
+  </tr>
+  <% @press.each do |press| %>
+  <tr>
+    <td><%= press.title %></td>
+    <td><%= press.url %></td>
+    <td><%= press.pubdate %> </td>
+    <td><%= link_to 'Edit Media', edit_press_path(press), class: "btn btn-large btn-primary" %></td>
+  </tr>
+  <% end %>
+</table>
