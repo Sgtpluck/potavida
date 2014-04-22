@@ -11,6 +11,10 @@
   background-color: rgb(241, 183, 58);
 }
 
+.navbar.navbar-inverse.navbar-fixed-top {
+  border-bottom: none;
+}
+
 .row.blog {
   border:2px solid;
   border-radius:25px;
