@@ -14,7 +14,7 @@ class PressController < ApplicationController
   def create
     @press = Press.new(press_params)
     if @press.save
-      redirect_to root_path
+      redirect_to all_press_path
     else
       render :new
     end

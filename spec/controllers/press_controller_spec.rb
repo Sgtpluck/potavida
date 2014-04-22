@@ -65,10 +65,10 @@ describe PressController do
 
     let(:invalid_attributes) { { title: nil, url: 'http://www.whatever.com', pubdate: Date.today } }
       
-      it "renders the edit page" do
+      it "renders the new page" do
         post :create, press: invalid_attributes
 
-        expect(response).to render_template
+        expect(response).to render_template 'new'
       end
     end
   end

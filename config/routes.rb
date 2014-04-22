@@ -39,7 +39,7 @@ Potaomg::Application.routes.draw do
   post '/subscribe',            to: 'subscribers#create', as: :subscribers
 
   get '/press',                 to: 'press#index', as: :all_press
-  get '/press/new',             to: 'press#new'
+  get '/press/new',             to: 'press#new', as: :new_press
   post '/press/new',            to: 'press#create', as: :presses
   get '/press/:id/edit',        to: 'press#edit', as: :edit_press
   post '/press/:id/edit',       to: 'press#update'
