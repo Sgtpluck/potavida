@@ -25,7 +25,7 @@ $(document).ready(function(){
                     form.hide();
                 },
                 error: function(xhr, textStatus, errorThrown) {
-                    alert("There was a problem signing in.");
+                    alert("There was a problem signing in."+errorThrown);
                 }
             });
             e.preventDefault();
