@@ -2,6 +2,9 @@ body.posts {
   padding-top: 7%;
 }
 
+.container.nav {
+  margin-left: 6%;
+}
 h4 {
   color: rgb(61, 155, 213);
 }
@@ -22,9 +25,9 @@ h3.blog-post-title {
   padding: 200px;
 }
 
-.container.nav {
+/*.container.nav {
   margin-left: 15%;
-}
+}*/
 
 .sidebar-module {
   margin-left: 15%;
