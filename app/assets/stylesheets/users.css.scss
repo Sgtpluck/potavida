@@ -3,18 +3,23 @@
 }
 
 .user_table th, td {
-  border-bottom: 1px solid black;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  border: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 2px;
+  padding-left: 5px;
 }
 
 .navbar-nav li a {
   padding-bottom: 20px;
 }
-.user_table th {
+/*.user_table th {
   padding: 8px 100px 8px 4px;
-}
+}*/
 
+table.table_of_user {
+  border: none;
+}
 /*#headers {
   background-color: red;
   padding-left: 0px;
