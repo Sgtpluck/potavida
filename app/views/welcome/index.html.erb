@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="assets/ico/favicon.png">
-
-    <title> PotaVida </title>
-    
-  </head>
-
-  <body data-spy="scroll" data-offset="0" data-target="#navbar-main">
-  
-  
-    <div id="navbar-main">
+      <div id="navbar-main">
       <!-- Fixed navbar -->
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -32,9 +18,12 @@
               <li> <a href="#FAQ" class="smoothScroll"> FAQ </a> </li>
               <li> <a href="#blog" class="smoothScroll"> Blog</a> </li>
               <li> <a href="#contact" class="smoothScroll"> Contact</a> </li>
-              <li> <div id='hidden_form'> <%= render '/sessions/form' %> </div> </li>
+              <!-- <li> <div id='hidden_form'> <#%= render '/sessions/form' %> </div> </li> -->
               <% unless current_user %>
-              <li><%= link_to 'Sign In', sign_in_path, id: 'sign_in', remote: true %>
+              <li>
+                <a href="" data-toggle="modal" data-target="#myModal" class='sign_in_link'>
+                  Sign In
+                </a>
                 </li>
               <% else %>
                 <li class="dropdown" id='current'>
@@ -68,6 +57,19 @@
       </div>
     </div>
   </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+      </div>
+      <div class="modal-body">
+        <%= render '/sessions/form' %>
+         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
     <!-- ==== GREYWRAP ==== -->
@@ -358,5 +360,3 @@
         <h4>Created by Blavida -- Copyright 2014</h4>
       </div>
     </div>
-  </body>
-</html>

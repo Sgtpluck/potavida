@@ -1,42 +1,26 @@
-$(document).ready(function(){
-    if ($('#hidden_form')) {
-        var form = $('#hidden_form');
-    }
-    if ($('#sign_in')) {
-        var sign_in_link = $('#sign_in');
-    }
-    if ($('.close')) {
-        var close_button = document.querySelector('.close');
-    }
-    $('#sign_in').click(function (e) {
-        form.show();
-        sign_in_link.hide();
-        var url = document.querySelector('form.sign_in_form').action
-        $('.submit_sign_in').click(function (e) {
-            $.ajax({
-                type: 'POST',
-                url: url,
-                data: {
-                    'name': $('input#name').val(),
-                    'password': $('input#password').val(),
-                    'authenticity_token': $(".sign_in_token").html().replace(/(\r\n|\n|\r|\s)/gm,"")
-                },
-                success: function (data) {
-                    form.hide();
-                },
-                error: function(xhr, textStatus, errorThrown) {
-                    alert("There was a problem signing in."+errorThrown);
-                }
-            });
-            e.preventDefault();
-        });
-    e.preventDefault();
-  });
+// $(document).ready(function(){
+  
+//   $('.sign_in_submit').click(function (e) {
+//     var sign_in = $('.sign_in_link')
+//     var url = $('form.sign_in_form').attr('action');
+//         $.ajax({
+//             type: 'POST',
+//             url: url,
+//             data: {
+//                 'name': $('input#name').val(),
+//                 'password': $('input#password').val(),
+//                 'authenticity_token': $(".sign_in_token").html().replace(/(\r\n|\n|\r|\s)/gm,"")
+//             },
+//             success: function (data) {
+//                 sign_in.hide();
+//                 $('#myModal').modal('hide');
 
-    $('.close').click(function (e) {
-        form.hide();
-        sign_in_link.show();
-    });
+//             },
+//             error: function(xhr, textStatus, errorThrown) {
+//                 alert("There was a problem signing in.");
+//             }
+//         });
+//         e.preventDefault();
+//     });
+//   });
 
-
-});
