@@ -60,6 +60,17 @@ describe PressController do
         expect(response.status).to eq 302
       end
     end
+
+    context "with invalid attributes " do
+
+    let(:invalid_attributes) { { title: nil, url: 'http://www.whatever.com', pubdate: Date.today } }
+      
+      it "renders the edit page" do
+        post :create, press: invalid_attributes
+
+        expect(response).to render_template
+      end
+    end
   end
 
   describe 'get "edit"' do

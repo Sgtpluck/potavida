@@ -39,7 +39,7 @@
               <% else %>
                 <li class="dropdown" id='current'>
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <%= current_user.name %> <span class="caret"></span>
+                    <%= current_user.try(:name).titleize %> <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu">
                   <li><%= link_to 'Edit your information', edit_user_path(current_user.id) %>
@@ -56,8 +56,8 @@
                    <li>
                     <%= link_to 'Media Page', all_press_path %>
                   </li>
-                  <li><%= link_to 'Sign Out', sign_out_path %></li>
                   <% end %>
+                  <li><%= link_to 'Sign Out', sign_out_path %></li>
                 </ul>
                 </li>       
               <% end %>
@@ -269,7 +269,7 @@
       </div><!-- /row -->
       
       <div class="row">
-        <% @posts.order(:date).limit(2).each do |post| %>
+        <% @posts.order('DATE desc').limit(2).each do |post| %>
         <div class="col-lg-6 blog-bg">
           <div class="col-lg-4 centered">
           <br>
@@ -277,9 +277,9 @@
             <h5><%=post.date %></h5>
           </div>
           <div class="col-lg-8 blog-content">
-            <h2><%=post.title %></h2>
-            <p><%=truncate(post.content, length: 25, separator: ' ') %></p>
-            <p><%= link_to("Read More", "/posts/#{post.id}", class: "icon icon-link")%></p>
+            <h2><%=truncate(post.title, length:80) %></h2>
+            <p><%=truncate(post.content, length: 100, separator: ' ') %></p>
+            <p id="read_more"><%= link_to("Read More", "/posts/#{post.id}", class: "icon icon-link")%></p>
             <br>
           </div>
 
@@ -309,7 +309,7 @@
     <div class="container" id="contact" name="contact">
       <div class="row">
       <br>
-        <h1 class="centered">THANKS FOR VISITING US</h1>
+        <h1 class="centered">Thanks for visiting us!</h1>
         <hr>
         <br>
         <br>
