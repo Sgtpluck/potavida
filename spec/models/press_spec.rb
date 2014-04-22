@@ -27,7 +27,7 @@ describe Press do
     end
 
     it 'should have a valid date' do
-      press.update(pubdate: 'hello')
+      press.update(pubdate: '1234')
 
       expect(press).to be_invalid
     end

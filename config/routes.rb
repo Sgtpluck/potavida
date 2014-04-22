@@ -38,6 +38,9 @@ Potaomg::Application.routes.draw do
 
   post '/subscribe',            to: 'subscribers#create', as: :subscribers
 
+  get '/press/new',             to: 'press#new'
+  post '/press/new',            to: 'press#create'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
