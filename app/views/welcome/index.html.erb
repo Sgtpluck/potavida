@@ -266,7 +266,7 @@
       </div><!-- /row -->
       
       <div class="row">
-        <% @posts.order(:date).limit(2).each do |post| %>
+        <% @posts.order('DATE desc').limit(2).each do |post| %>
         <div class="col-lg-6 blog-bg">
           <div class="col-lg-4 centered">
           <br>
@@ -274,9 +274,9 @@
             <h5><%=post.date %></h5>
           </div>
           <div class="col-lg-8 blog-content">
-            <h2><%=post.title %></h2>
-            <p><%=truncate(post.content, length: 25, separator: ' ') %></p>
-            <p><%= link_to("Read More", "/posts/#{post.id}", class: "icon icon-link")%></p>
+            <h2><%=truncate(post.title, length:80) %></h2>
+            <p><%=truncate(post.content, length: 100, separator: ' ') %></p>
+            <p id="read_more"><%= link_to("Read More", "/posts/#{post.id}", class: "icon icon-link")%></p>
             <br>
           </div>
 
