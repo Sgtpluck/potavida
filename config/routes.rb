@@ -41,7 +41,7 @@ Potaomg::Application.routes.draw do
   get '/press',                 to: 'press#index'
   get '/press/new',             to: 'press#new'
   post '/press/new',            to: 'press#create', as: :presses
-  get '/press/:id/edit',        to: 'press#edit'
+  get '/press/:id/edit',        to: 'press#edit', as: :edit_press
   post '/press/:id/edit',       to: 'press#update'
 
   # The priority is based upon order of creation: first created -> highest priority.
