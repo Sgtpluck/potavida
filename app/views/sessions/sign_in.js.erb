@@ -4,6 +4,8 @@ $('#headers').append("<li class='dropdown' id='current'>"+
                         "<ul class='dropdown-menu'>"+
                           "<li><%= j link_to 'Edit your information', edit_user_path(current_user.id) %>"+
                           "</li>"+
+                          "<li><%= j link_to 'Data Visualizations', 'graphs' %>" +
+                          "</li>"
                           "<% if current_user.role == 'Admin' %>"+
                             "<li><%= j link_to 'Create A New User', new_user_path(:id => current_user.id) %>"+
                             "</li>"+
