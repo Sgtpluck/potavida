@@ -50,7 +50,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :user_id, :content, :date)
+    params.require(:post).permit(:title, :user_id, :content, :date, :snippet)
   end
 
   def find_post
