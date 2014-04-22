@@ -4,7 +4,7 @@ class PressController < ApplicationController
   layout 'user'
 
   def index
-    @press = Press.all
+    @press = Press.all.order('pubdate DESC')
   end
 
   def new
@@ -25,7 +25,8 @@ class PressController < ApplicationController
 
   def update
     if @press.update(press_params)
-      redirect_to root_path
+      redirect_to all_press_path
+      flash[:notice] = "You have updated this press release."
     else
       render :edit
     end

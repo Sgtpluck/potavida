@@ -1,21 +1,20 @@
 <h2>All Press</h2>
+<br>
+<%= link_to 'Add New Media', new_press_path, class: "btn btn-large btn-success" %>
 <br><br>
-<%= link_to 'Add New Media', new_press_path, class: "btn btn-large btn-primary" %>
 <table class='user_table'>
   <tr>
     <th>Title</th>
-    <th>Url</th>
-    <th>Publish Date</th>
+    <th class="button_link">Publish Date</th>
     <th></th>
     <th></th>
   </tr>
   <% @press.each do |press| %>
   <tr>
     <td><%= press.title %></td>
-    <td><%= press.url %></td>
-    <td><%= press.pubdate %> </td>
-    <td><%= link_to 'Edit Media', edit_press_path(press), class: "btn btn-large btn-primary" %></td>
-    <td><%= link_to "Delete", destroy_path(press), class: 'btn btn-danger', :confirm => "Are you sure you want to delete this?", :method => :delete %></td>
+    <td class="button_link"><%= press.pubdate %> </td>
+    <td class="button_link"><%= link_to 'Edit Media', edit_press_path(press), class: "btn btn-large btn-primary" %></td>
+    <td class="button_link"><%= link_to "Delete", destroy_path(press), class: 'btn btn-danger', :confirm => "Are you sure you want to delete this?", :method => :delete %></td>
   </tr>
   <% end %>
 </table>
