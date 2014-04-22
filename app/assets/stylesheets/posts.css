@@ -6,6 +6,11 @@ h4 {
   color: rgb(61, 155, 213);
 }
 
+h3.blog-post-title {
+  text-decoration: underline;
+}
+
+
 .twitter-timeline {
   background-color: #F0EEEB;
   padding: 5%;
