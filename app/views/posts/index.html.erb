@@ -16,7 +16,7 @@
             <h3 class="blog-post-title"><%= link_to("#{post.title}", "/posts/#{post.id}") %></h3>
             <p class="blog-post-meta"><%= post.date.strftime('%b %d, %Y') %> by <%= post.user.name %></p>
 
-            <p><%= markdown truncate(post.content, length: 600).html_safe %><%= link_to(" . . .Read More", "/posts/#{post.id}") %></p>
+            <p><%= markdown post.snippet %><%= link_to(" . . .Read More", "/posts/#{post.id}") %></p>
             <hr>
             <% end %>
           </div><!-- /.blog-post -->
