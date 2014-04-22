@@ -93,4 +93,15 @@ describe PressController do
       expect(response).to render_template(:edit)
     end
   end
+
+  describe "deletes a press" do
+      let!(:press){ create(:press) }
+
+      it "deletes the article" do
+        press_count = Press.count
+        delete :destroy, id: press.id 
+
+        expect(Press.count).to eq(press_count - 1)
+      end
+    end
 end

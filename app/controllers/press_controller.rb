@@ -1,6 +1,6 @@
 class PressController < ApplicationController
   before_action :check_admin
-  before_action :find_press, only: [:edit, :update]
+  before_action :find_press, only: [:edit, :update, :destroy]
   layout 'user'
 
   def index
@@ -29,6 +29,11 @@ class PressController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @press.destroy
+    redirect_to all_press_path
   end
 
   private
