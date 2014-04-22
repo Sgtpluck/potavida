@@ -6,5 +6,6 @@ FactoryGirl.define do
     date '04-09-2014'
     user_id 2
     content "MyText"
+    snippet "MyText"
   end
 end
