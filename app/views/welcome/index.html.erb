@@ -289,17 +289,13 @@
       <br>
       <br>
     </div><!-- /container -->
-    <div class='containter'>
+    <div class='container'>
       <div class="row">
         <h1 class='centered'>PotaVida In The Press</h1>
-        <table class='user_table'>
-          <tr>
-            <th></th>
-          </tr>
           <% @press.each do |press| %>
-          <tr>
-            <td class='centered'><%= link_to press.title, press.url %></td>
-          </tr>
+          <ul class="press_list">
+            <li><%= link_to press.title, press.url %></li>
+          </ul>
           <% end %>
         </table>
       </div>

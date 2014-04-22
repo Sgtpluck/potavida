@@ -17,4 +17,19 @@ td.button_link {
 
 th.button_link {
   max-width: 50px;
+  margin-left: 5%;
+}
+
+table {
+  padding-bottom: 20%;
+}
+
+ul.press_list {
+  display: inline-block;
+  list-style-image: url('tinydrop.png');
+}
+
+.row.press {
+  width:60%;
+  text-align: justify;
 }
