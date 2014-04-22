@@ -8,6 +8,16 @@ describe PressController do
     end
 
     describe "create" do
+      context "when the user is not a client or admin" do
+
+      it "should boot them from the page" do
+        @current_user.update(role: 'Client')
+        get :new
+
+        expect(response).to be_redirect
+      end
+    end
+
       context "with valid attributes" do
       let(:valid_attributes) { { title: "WATERWATER", url: 'http://www.whatever.com', pubdate: Date.today } }
         
@@ -25,7 +35,7 @@ describe PressController do
         end
 
         it "successfully redirects after created" do
-          post :create, post: valid_attributes
+          post :create, press: valid_attributes
           expect(response.status).to eq 302
         end
 
