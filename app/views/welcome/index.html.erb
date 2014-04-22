@@ -53,6 +53,9 @@
                   <li>
                     <%= link_to 'Write Blog Post', new_post_path %>
                   </li>
+                   <li>
+                    <%= link_to 'Media Page', all_press_path %>
+                  </li>
                   <% end %>
                   <li><%= link_to 'Sign Out', sign_out_path %></li>
                 </ul>
@@ -286,6 +289,22 @@
       <br>
       <br>
     </div><!-- /container -->
+    <div class='containter'>
+      <div class="row">
+        <h1 class='centered'>PotaVida In The Press</h1>
+        <table class='user_table'>
+          <tr>
+            <th></th>
+          </tr>
+          <% @press.each do |press| %>
+          <tr>
+            <td class='centered'><%= link_to press.title, press.url %></td>
+          </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+
     
     <div class="container" id="contact" name="contact">
       <div class="row">
