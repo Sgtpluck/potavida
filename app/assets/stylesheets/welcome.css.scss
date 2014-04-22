@@ -2,14 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.nav {
+  margin-left: 10%;
+}
 .subscriber_submit.btn.btn-primary {
   margin-left: 19%;
   margin-top: 3%;
   background-color: rgb(241, 183, 58);
 }
 
-body {
-  font-size: 14pt;
+.row.blog {
+  border:2px solid;
+  border-radius:25px;
+  box-shadow: 5px 5px 2px #888888;
+}
+
+.col-lg-6.blog-bg {
+  height: 250px;
+  background-color: #423E38;
+}
+
+.col-lg-8.blog-content {
+  height: 250px;
+  background-color: #F0EEEB;
+}
+
+#read_more {
+  position: absolute;
+  bottom: 0;
 }
 
 .row {
