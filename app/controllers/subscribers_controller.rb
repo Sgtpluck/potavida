@@ -4,8 +4,8 @@ class SubscribersController < ApplicationController
     @subscriber = Subscriber.new(subscriber_params)
     if @subscriber.save
       Resque.enqueue(WelcomeJob, @subscriber.id)
-    end
     redirect_to root_path
+    end
   end
 
   private
