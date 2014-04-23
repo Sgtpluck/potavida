@@ -1,7 +1,6 @@
 <h2>All Users</h2>
-<br><br>
 
-<table class='user_table'>
+<table class='user_table table table-hover table-bordered'>
   <tr>
     <th>User Name</th>
     <th>User Email</th>
@@ -13,7 +12,7 @@
     <td><%= user.name.titleize %></td>
     <td><%= user.email %></td>
     <td><%= user.role.titleize %> </td>
-    <td><%= link_to 'Change User Role', change_user_role_path(user), class: "btn btn-large btn-primary" %></td>
+    <td class="text-center"><%= link_to 'Change User Role', change_user_role_path(user), class: "btn btn-large btn-primary" %></td>
   </tr>
   <% end %>
 </table>

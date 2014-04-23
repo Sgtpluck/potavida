@@ -2,11 +2,15 @@ body.posts {
   padding-top: 7%;
 }
 
+.container.new_post {
+  width: 75%;
+}
+
 .container.nav {
   margin-left: 6%;
 }
 h4 {
-  color: rgb(61, 155, 213);
+  color: black;
 }
 
 h3.blog-post-title {
@@ -25,6 +29,18 @@ h3.blog-post-title {
   padding: 200px;
 }
 
+.btn.btn-lg.btn-success {
+  padding-top: 6px;
+  margin-top: 5%;
+  background-color: rgb(241, 183, 58);
+  border: 1px solid rgb(241, 183, 58);
+}
+
+a.btn.btn-large.btn-success {
+  background-color: rgb(241, 183, 58);
+  border: 1px solid rgb(241, 183, 58);
+  font-weight: bold;
+}
 /*.container.nav {
   margin-left: 15%;
 }*/
