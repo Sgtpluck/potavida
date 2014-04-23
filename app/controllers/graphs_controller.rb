@@ -11,7 +11,7 @@ class GraphsController < ApplicationController
   end
 
   def bar
-    respond_with @bar_data = DataQuery.new().get_bar_data 
+    respond_with @bar_data = DataQuery.new().get_bar_data
   end
 
   def map

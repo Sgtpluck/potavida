@@ -2,6 +2,7 @@ $(document).ready(function() {
   // var button = document.querySelector('#bar_link')
 
   $('#bar_link').click(function (e) {
+    console.log("blah")
     $('#container4').empty();
     $("#hist_date_picker").hide();
     var url = $('#bar_link').attr('href');

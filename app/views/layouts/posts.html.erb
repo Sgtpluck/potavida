@@ -19,8 +19,7 @@
         </div>
       <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-              <li class="hidden-xs"><%= image_tag 'pvlogo.png', class: 'logo' %></li>
-              <li> <a href="/">Home</a> </li>
+              <li class="hidden-xs"><%= link_to image_tag('pvlogo.png', class: 'logo', width: 65, height: 60), root_path %></li>
               <li> <div id='hidden_form'> <%= render '/sessions/form' %> </div> </li>
             </ul>
             

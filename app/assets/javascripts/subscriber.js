@@ -2,6 +2,7 @@ $(document).ready(function(){
       if (document.querySelector('form.new_subscriber')) {
         var url = document.querySelector('form.new_subscriber').action;
       }
+
       $('.subscriber_submit').click(function (e) {
           $.ajax({
               type: 'POST',
@@ -18,7 +19,6 @@ $(document).ready(function(){
               },
               error: function(xhr, textStatus, errorThrown) {
                   alert("There was a problem with your information.");
-                  console.log(data);
               }
           });
           e.preventDefault();

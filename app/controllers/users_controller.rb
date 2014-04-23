@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :check_admin, except: [:show, :edit, :update]
-  before_action :find_user, only: [:edit, :update, :show, :update_user_role, :change_user_role]
+  before_action :find_user, only: [:edit, :update, :update_user_role, :change_user_role]
   layout 'user'
 
   def index
@@ -8,9 +8,6 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  def show
-    redirect_to users_path unless current_user.id == @user.id
-  end
 
   def new
     @new_user = User.new
@@ -31,7 +28,8 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to user_path
+      flash[:notice] = 'Thanks for updating your information!'
+      redirect_to edit_user_path
     else
       render :edit
     end
