@@ -1,24 +1,28 @@
-<div class='sidebar-nav-fixed'>
-  <br><br>
-  <%= link_to "Location Data", "/graphs/map", class: "btn btn-large btn-danger", id:"map_link" %>
-  <br><br>
-  <%= link_to "Battery Histogram", "/graphs/batt", class: "btn btn-large btn-warning", id:"batt_link", :remote => :true %>
-  <br><br>
-  <%= link_to "Histogram", "/graphs/histogram", class: "btn btn-large btn-warning", id:"histo_link", :remote => :true %>
-  <br><br>
-  <%= link_to "Bar Graph", "/graphs/bar", class: "btn btn-large btn-success", id:"bar_link", :remote => :true %>
-</div>
+<div class='graphs_container'>
+  <div class='sidebar-nav-fixed'>
+    <br><br>
+    <div class='graph_buttons'>
+      <%= link_to "Location Data", "/graphs/map", class: "btn btn-lg btn-primary", id:"map_link" %>
+      <br><br>
+      <%= link_to "Battery Histogram", "/graphs/batt", class: "btn btn-lg btn-primary", id:"batt_link", :remote => :true %>
+      <br><br>
+      <%= link_to "Histogram", "/graphs/histogram", class: "btn btn-lg btn-primary", id:"histo_link", :remote => :true %>
+      <br><br>
+      <%= link_to "Bar Graph", "/graphs/bar", class: "btn btn-lg btn-primary", id:"bar_link", :remote => :true %>
+    </div>
+  </div>
 
-<div id="container4" data-drop-url='<%= asset_url("droplet.png") %>'>
-</div>
+  <div id="container4" data-drop-url='<%= asset_url("droplet.png") %>'>
+  </div>
 
 
-<div id='hist_date_picker'>
-  <%= form_tag( { action: 'date_range' }, id: 'hist_date_form', method: 'get') do %>
-    <%= label_tag 'Beginning Date' %>
-    <%= date_field_tag 'begin_date' %>
-    <%= label_tag 'Ending Date' %>
-    <%= date_field_tag 'end_date' %>
-    <%= submit_tag 'Pick Date Range', id: 'hist_date_submit' %>
-  <% end %>
+  <div id='hist_date_picker'>
+    <%= form_tag( { action: 'date_range' }, id: 'hist_date_form', method: 'get') do %>
+      <%= label_tag 'Beginning Date' %>
+      <%= date_field_tag 'begin_date' %>
+      <%= label_tag 'Ending Date' %>
+      <%= date_field_tag 'end_date' %>
+      <%= submit_tag 'Pick Date Range', id: 'hist_date_submit' %>
+    <% end %>
+  </div>
 </div>
