@@ -20,7 +20,10 @@
       <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
               <li class="hidden-xs"><%= link_to image_tag('pvlogo.png', class: 'logo', width: 65, height: 60), root_path %></li>
-              <li><%= link_to "Blog", posts_path %></li>              
+              <% unless controller.action_name == "index" %>
+                <li><%= link_to "Blog", posts_path %></li>
+              <% end %>
+              <% if current_user %>              
               <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                   <%= current_user.try(:name).titleize %> <span class="caret"></span>
@@ -46,6 +49,7 @@
                   <li><%= link_to 'Sign Out', sign_out_path %></li> 
                 </ul>
               </li>
+              <% end %>
               <li> <div id='hidden_form'> <%= render '/sessions/form' %> </div> </li>
             </ul>
             
