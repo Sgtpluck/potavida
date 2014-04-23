@@ -6,6 +6,17 @@
   margin-left: 10%;
 }
 
+.sign_in_submit.btn.btn-lg.btn-primary {
+  padding: 5px;
+  margin-top: 5%;
+}
+
+button.close {
+  padding: 1%;
+  color: rgb(241, 183, 58);
+  opacity: 100;
+}
+
 .subscriber_submit.btn.btn-primary {
   padding-left: 10%;
   padding-right: 10%;
@@ -13,6 +24,11 @@
   margin-top: 3%;
   border: none;
   background-color: rgb(241, 183, 58);
+}
+
+.modal-header {
+  padding: 0px;
+  height: 32px;
 }
 
 .navbar.navbar-inverse.navbar-fixed-top {
