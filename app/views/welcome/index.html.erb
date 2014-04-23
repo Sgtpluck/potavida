@@ -281,7 +281,7 @@
           </div>
           <div class="col-lg-8 blog-content">
             <h2><%=truncate(post.title, length:80) %></h2>
-            <p><%= post.snippet %></p>
+            <p><%=post.snippet %></p>
             <p id="read_more"><%= link_to("Read More", "/posts/#{post.id}", class: "icon icon-link")%></p>
             <br>
           </div>

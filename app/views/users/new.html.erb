@@ -20,7 +20,7 @@
   <tr>
     <div class="form_field">
       <td><%= f.label :role %></td>
-      <td><%= f.select(:role, options_for_select(['Admin','Client','Field Manager'])) %></td>
+      <td><%= f.select(:role, options_for_select(['Admin','Client','Field Manager']), {}, class: "form-control") %></td>
     </div>
   </tr>
   <tr>
