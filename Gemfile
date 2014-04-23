@@ -42,6 +42,7 @@ group :development do
   gem 'capistrano-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem "capistrano-resque", github: "sshingler/capistrano-resque", require: false
 end
 
 gem 'therubyracer', platforms: :ruby
