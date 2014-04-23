@@ -7,7 +7,11 @@
 role :app, %w{deploy@ec2-54-187-116-152.us-west-2.compute.amazonaws.com}
 role :web, %w{deploy@ec2-54-187-116-152.us-west-2.compute.amazonaws.com}
 role :db,  %w{deploy@ec2-54-187-116-152.us-west-2.compute.amazonaws.com}
+role :resque_worker, %w{deploy@ec2-54-187-116-152.us-west-2.compute.amazonaws.com}
+role :resque_scheduler, %w{deploy@ec2-54-187-116-152.us-west-2.compute.amazonaws.com}
 
+set :workers, { "*" => 1 }
+set :resque_environment_task, true
 
 # Extended Server Syntax
 # ======================
@@ -57,3 +61,6 @@ end
 
 after "deploy:started", "figaro:setup"
 after "deploy:symlink:release", "figaro:symlink"
+after "deploy:restart", "resque:restart"
+
+

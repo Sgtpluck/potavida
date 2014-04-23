@@ -36,12 +36,14 @@ group :development, :test do
 end
 
 group :development do
+  gem 'quiet_assets'
   gem 'capistrano', '3.1.0'
   gem 'capistrano-rvm'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem "capistrano-resque", github: "sshingler/capistrano-resque", require: false
 end
 
 gem 'therubyracer', platforms: :ruby
