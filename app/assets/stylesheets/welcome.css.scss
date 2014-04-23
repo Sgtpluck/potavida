@@ -81,6 +81,7 @@ button.close {
 
 #hist_date_picker {
   display: none;
+  padding-left: 16%
 }
 
 .sign_in_token {
@@ -118,6 +119,22 @@ button.close {
 p.words {
   padding-left: 13%;
   min-width: 90%;
+}
+
+a#map_link {
+  width: 250px;
+}
+
+a#batt_link {
+  width: 250px;
+}
+
+a#histo_link {
+  width: 250px;
+}
+
+a#bar_link {
+  width: 250px;
 }
 
 @media (min-width: 768px) {

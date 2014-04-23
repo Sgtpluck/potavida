@@ -4,9 +4,19 @@
 
 
 #container4 {
-  margin-right: 25%;
+ padding-left: 16%;
+ width: 95%
 }
 
+.sidebar-nav-fixed {
+     position:fixed;
+     top: 20%;
+     left: 10%;
+     width:20%;
+ }
+
+
+
 #map {
-  height: 500px;
+  height: 450px;
 }

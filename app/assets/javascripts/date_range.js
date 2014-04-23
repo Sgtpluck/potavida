@@ -17,7 +17,6 @@ $(document).ready(function() {
         url: 'graphs/date_range',
         success: function(data) {
             $("#hist_date_picker").show();
-            console.log(data)
             hist_data(data);
         },
         error: function(xhr, textStatus, errorThrown) {
