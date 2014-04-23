@@ -119,3 +119,9 @@ p.words {
   padding-left: 13%;
   min-width: 90%;
 }
+
+@media (min-width: 768px) {
+  div.navbar.navbar-inverse.navbar-fixed-top {
+  height: 60px;
+  }
+}

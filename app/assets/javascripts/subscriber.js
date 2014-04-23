@@ -2,6 +2,7 @@ $(document).ready(function(){
       if (document.querySelector('form.new_subscriber')) {
         var url = document.querySelector('form.new_subscriber').action;
       }
+
       $('.subscriber_submit').click(function (e) {
           $.ajax({
               type: 'POST',
