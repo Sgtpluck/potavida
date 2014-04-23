@@ -34,18 +34,20 @@
                 <ul class="dropdown-menu">
                   <li><%= link_to 'Edit your information', edit_user_path(current_user.id) %>
                   </li>
+                  <li><%= link_to 'Data Visualizations', 'graphs' %>
+                  </li>
                   <% if current_user.role == 'Admin' %>
-                  <li><%= link_to 'Create A New User', new_user_path %>
-                  </li>
-                  <li>
-                    <%= link_to 'See Users', users_path %>
-                  </li>
-                  <li>
-                    <%= link_to 'Write Blog Post', new_post_path %>
-                  </li>
-                  <li>
-                    <%= link_to 'Media Page', all_press_path %>
-                  </li>
+                    <li><%= link_to 'Create A New User', new_user_path %>
+                    </li>
+                    <li>
+                      <%= link_to 'See Users', users_path %>
+                    </li>
+                    <li>
+                      <%= link_to 'Write Blog Post', new_post_path %>
+                    </li>
+                    <li>
+                      <%= link_to 'Media Page', all_press_path %>
+                    </li>
                   <% end %>
                   <li><%= link_to 'Sign Out', sign_out_path %></li> 
                 </ul>
