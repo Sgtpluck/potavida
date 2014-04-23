@@ -20,6 +20,32 @@
       <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
               <li class="hidden-xs"><%= link_to image_tag('pvlogo.png', class: 'logo', width: 65, height: 60), root_path %></li>
+              <li><%= link_to "Blog", posts_path %></li>              
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                  <%= current_user.try(:name).titleize %> <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to 'Edit your information', edit_user_path(current_user.id) %>
+                  </li>
+                  <li><%= link_to 'Data Visualizations', 'graphs' %>
+                  </li>
+                  <% if current_user.role == 'Admin' %>
+                    <li><%= link_to 'Create A New User', new_user_path %>
+                    </li>
+                    <li>
+                      <%= link_to 'See Users', users_path %>
+                    </li>
+                    <li>
+                      <%= link_to 'Write Blog Post', new_post_path %>
+                    </li>
+                    <li>
+                      <%= link_to 'Media Page', all_press_path %>
+                    </li>
+                  <% end %>
+                  <li><%= link_to 'Sign Out', sign_out_path %></li> 
+                </ul>
+              </li>
               <li> <div id='hidden_form'> <%= render '/sessions/form' %> </div> </li>
             </ul>
             
