@@ -23,7 +23,8 @@ class GraphsController < ApplicationController
   end
   
   def date_range
-    respond_with @hist_data.to_json = DataQuery.new().get_hist_date(params)
+    puts @hist_data
+    respond_with @hist_data = DataQuery.new().get_hist_date(params)
   end
 
 private
