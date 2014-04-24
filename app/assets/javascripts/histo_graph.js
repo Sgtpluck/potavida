@@ -104,7 +104,6 @@ $(document).ready(function() {
                 tickColor:'#ccc',
                 lineColor:'#ccc',
                 tickInterval:2,
-                alternateGridColor: '#FDFFD5'
                 //endOnTick:false,
             },
             series: [{

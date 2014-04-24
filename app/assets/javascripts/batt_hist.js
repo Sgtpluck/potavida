@@ -20,7 +20,8 @@ $(document).ready(function() {
     e.preventDefault();
 
     function batt_data(batt_results) { 
-      $('#container4').highcharts({
+        $("#container4").append("<h2 class='centered'>PotaVida Data Based On Serial Units</h2>");
+        $('#container4').highcharts({
         chart: {
                 renderTo:'container',
                 defaultSeriesType:'column',
@@ -97,7 +98,6 @@ $(document).ready(function() {
                 tickColor:'#ccc',
                 lineColor:'#ccc',
                 tickInterval:5,
-                alternateGridColor: '#FDFFD5'
                 //endOnTick:false,
             },
             series: [{
